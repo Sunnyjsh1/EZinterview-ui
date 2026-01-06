@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>10. 실사현황 관리</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>4. 실사현황 관리</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>진행 중인 조사 현황 모니터링</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="mobile-mockup">
+                            <div style="padding: 15px;">
+                                <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50; font-size: 1.2em;">조사 진행 현황</h3>
+                                
+                                <div class="card" style="margin-bottom: 15px;">
+                                    <div class="card-header" style="font-size: 0.95em;">전체 현황</div>
+                                    <div class="card-body">
+                                        <div style="text-align: center; padding: 15px 0;">
+                                            <div style="font-size: 2.5em; color: #3498db; font-weight: bold;">32 / 50</div>
+                                            <p style="color: #7f8c8d; font-size: 0.9em; margin-top: 5px;">응답 완료</p>
+                                        </div>
+                                        <div style="background-color: #ecf0f1; height: 20px; border-radius: 10px; overflow: hidden;">
+                                            <div style="background-color: #3498db; width: 64%; height: 100%;"></div>
+                                        </div>
+                                        <p style="text-align: center; margin-top: 10px; font-size: 0.85em; color: #555;">64% 달성</p>
+                                    </div>
+                                </div>
+
+                                <div class="card" style="margin-bottom: 15px;">
+                                    <div class="card-header" style="font-size: 0.95em;">일일 현황</div>
+                                    <div class="card-body" style="font-size: 0.85em;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                            <span>오늘 응답:</span>
+                                            <strong style="color: #27ae60;">+5명</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                            <span>평균 소요시간:</span>
+                                            <strong>14분 32초</strong>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <span>완료율:</span>
+                                            <strong>95%</strong>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary btn-block">상세 보기</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">실사 현황 관리</h3>
+                            
+                            <div class="grid-3" style="margin-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-header" style="font-size: 0.95em; text-align: center;">전체 응답</div>
+                                    <div class="card-body" style="text-align: center;">
+                                        <div style="font-size: 2em; color: #3498db; font-weight: bold;">32</div>
+                                        <div style="font-size: 0.85em; color: #7f8c8d;">/ 50명</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" style="font-size: 0.95em; text-align: center;">진행중</div>
+                                    <div class="card-body" style="text-align: center;">
+                                        <div style="font-size: 2em; color: #f39c12; font-weight: bold;">3</div>
+                                        <div style="font-size: 0.85em; color: #7f8c8d;">명</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" style="font-size: 0.95em; text-align: center;">미응답</div>
+                                    <div class="card-body" style="text-align: center;">
+                                        <div style="font-size: 2em; color: #95a5a6; font-weight: bold;">15</div>
+                                        <div style="font-size: 0.85em; color: #7f8c8d;">명</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">응답자 목록</div>
+                                <div class="card-body">
+                                    <table class="wireframe-table">
+                                        <thead>
+                                            <tr>
+                                                <th>번호</th>
+                                                <th>응답자</th>
+                                                <th>진행률</th>
+                                                <th>소요시간</th>
+                                                <th>상태</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>001</td>
+                                                <td>응답자A</td>
+                                                <td>100%</td>
+                                                <td>15분 20초</td>
+                                                <td><span class="status-badge approved">완료</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>002</td>
+                                                <td>응답자B</td>
+                                                <td>100%</td>
+                                                <td>13분 45초</td>
+                                                <td><span class="status-badge approved">완료</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>003</td>
+                                                <td>응답자C</td>
+                                                <td>62%</td>
+                                                <td>9분 30초</td>
+                                                <td><span class="status-badge in-progress">진행중</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td>004</td>
+                                                <td>응답자D</td>
+                                                <td>0%</td>
+                                                <td>-</td>
+                                                <td><span class="status-badge pending">미시작</span></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5" style="text-align: center; color: #95a5a6;">
+                                                    외 46명...
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="grid-2">
+                                <button class="btn btn-large">엑셀 다운로드</button>
+                                <button class="btn btn-primary btn-large">리마인드 발송</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="admin-test-link.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="admin-response-review-01.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 10/22</p>
+        </footer>
+    </div>
+</body>
+</html>

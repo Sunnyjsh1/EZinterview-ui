@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>12. 응답내용 검수 (2)</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>5. 응답내용 검수 (2)</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>응답 검수 대시보드</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="placeholder-box large">
+                            <p style="color: #7f8c8d; font-size: 0.95em;">사용자는 이 단계에서 대기 상태</p>
+                            <p style="color: #95a5a6; font-size: 0.85em; margin-top: 10px;">관리자 검수 완료 대기 중</p>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">검수 진행 현황</h3>
+                            
+                            <div class="grid-3" style="margin-bottom: 20px;">
+                                <div class="card">
+                                    <div class="card-header" style="font-size: 0.95em; text-align: center;">검수 완료</div>
+                                    <div class="card-body" style="text-align: center;">
+                                        <div style="font-size: 2em; color: #27ae60; font-weight: bold;">28</div>
+                                        <div style="font-size: 0.85em; color: #7f8c8d;">/ 32건</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" style="font-size: 0.95em; text-align: center;">검수 대기</div>
+                                    <div class="card-body" style="text-align: center;">
+                                        <div style="font-size: 2em; color: #f39c12; font-weight: bold;">4</div>
+                                        <div style="font-size: 0.85em; color: #7f8c8d;">건</div>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                    <div class="card-header" style="font-size: 0.95em; text-align: center;">재검토 필요</div>
+                                    <div class="card-body" style="text-align: center;">
+                                        <div style="font-size: 2em; color: #e74c3c; font-weight: bold;">0</div>
+                                        <div style="font-size: 0.85em; color: #7f8c8d;">건</div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">검수 대기 목록</div>
+                                <div class="card-body">
+                                    <table class="wireframe-table">
+                                        <thead>
+                                            <tr>
+                                                <th style="width: 80px;">응답자</th>
+                                                <th>응답 일시</th>
+                                                <th>소요시간</th>
+                                                <th style="width: 120px;">검수 상태</th>
+                                                <th style="width: 100px;">작업</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>001</td>
+                                                <td>2026-01-15 14:30</td>
+                                                <td>15분 20초</td>
+                                                <td><span class="status-badge approved">승인</span></td>
+                                                <td><button class="btn" style="padding: 6px 12px; font-size: 0.85em;">보기</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>002</td>
+                                                <td>2026-01-15 15:10</td>
+                                                <td>13분 45초</td>
+                                                <td><span class="status-badge approved">승인</span></td>
+                                                <td><button class="btn" style="padding: 6px 12px; font-size: 0.85em;">보기</button></td>
+                                            </tr>
+                                            <tr style="background-color: #fff3cd;">
+                                                <td>003</td>
+                                                <td>2026-01-15 16:25</td>
+                                                <td>14분 10초</td>
+                                                <td><span class="status-badge pending">대기</span></td>
+                                                <td><button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.85em;">검수</button></td>
+                                            </tr>
+                                            <tr style="background-color: #fff3cd;">
+                                                <td>004</td>
+                                                <td>2026-01-15 17:05</td>
+                                                <td>16분 30초</td>
+                                                <td><span class="status-badge pending">대기</span></td>
+                                                <td><button class="btn btn-primary" style="padding: 6px 12px; font-size: 0.85em;">검수</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td colspan="5" style="text-align: center; color: #95a5a6;">
+                                                    외 28건...
+                                                </td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">검수자 노트</div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>전체 검수 의견</label>
+                                        <div class="form-input large" style="background-color: #ecf0f1; color: #7f8c8d;">
+                                            전반적으로 응답 품질이 양호함. 대부분의 응답자가 충분한 시간을 들여 성실하게 답변함. 몇몇 응답에서 배경 소음이 있었으나 스크립트 변환에는 문제 없음.
+                                        </div>
+                                    </div>
+
+                                    <div style="display: flex; gap: 10px; margin-top: 15px;">
+                                        <label style="display: flex; align-items: center; gap: 8px;">
+                                            <input type="checkbox" checked style="width: 18px; height: 18px;">
+                                            검수 완료 시 고객사에 알림
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="display: flex; gap: 10px; margin-top: 30px;">
+                                <button class="btn btn-large" style="flex: 1;">엑셀 다운로드</button>
+                                <button class="btn btn-success btn-large" style="flex: 2;">검수 완료 처리</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="admin-response-review-01.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="user-process.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 12/22</p>
+        </footer>
+    </div>
+</body>
+</html>

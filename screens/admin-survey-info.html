@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>7. 프로젝트 등록 - 조사 정보</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>1. 프로젝트 등록 - 조사 정보</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>조사 정보 상세</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="mobile-mockup">
+                            <div style="padding: 15px;">
+                                <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50;">프로젝트 정보</h3>
+                                
+                                <div class="card" style="margin-bottom: 15px;">
+                                    <div class="card-header" style="font-size: 1em;">기본 정보</div>
+                                    <div class="card-body" style="font-size: 0.9em;">
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                            <strong>프로젝트명:</strong>
+                                            <span style="color: #555;">2026 신제품 만족도</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                            <strong>조사 기간:</strong>
+                                            <span style="color: #555;">01/15 ~ 01/30</span>
+                                        </div>
+                                        <div style="display: flex; justify-content: space-between;">
+                                            <strong>상태:</strong>
+                                            <span class="status-badge pending">약정서 승인 대기</span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="placeholder-box small">
+                                    <p style="font-size: 0.85em;">조사 진행률</p>
+                                    <div style="background-color: #ecf0f1; height: 20px; border-radius: 10px; margin-top: 10px; overflow: hidden;">
+                                        <div style="background-color: #3498db; width: 25%; height: 100%;"></div>
+                                    </div>
+                                    <p style="font-size: 0.8em; margin-top: 5px;">25% 완료</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">조사 정보 관리</h3>
+                            
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">프로젝트 개요</div>
+                                <div class="card-body">
+                                    <table class="wireframe-table">
+                                        <tr>
+                                            <th style="width: 150px;">항목</th>
+                                            <th>내용</th>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>NKMS 번호</strong></td>
+                                            <td>PRJ-2026-0001</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>프로젝트명</strong></td>
+                                            <td>2026 신제품 만족도 조사</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>고객사</strong></td>
+                                            <td>(주)샘플컴퍼니 / 홍길동</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>조사 기간</strong></td>
+                                            <td>2026-01-15 ~ 2026-01-30</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>예상 응답자</strong></td>
+                                            <td>50명</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>진행 상태</strong></td>
+                                            <td><span class="status-badge pending">약정서 승인 대기</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="grid-2">
+                                <button class="btn btn-large">수정하기</button>
+                                <button class="btn btn-primary btn-large">상세 관리</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-section">
+                <h3>조사 진행 단계</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #27ae60;">1</div>
+                        <div class="step-label">프로젝트 등록</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #3498db;">2</div>
+                        <div class="step-label">약정서 승인</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #95a5a6;">3</div>
+                        <div class="step-label">가이드 생성</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #95a5a6;">4</div>
+                        <div class="step-label">조사 진행</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #95a5a6;">5</div>
+                        <div class="step-label">결과 분석</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="admin-project-04.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="admin-guide-review.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 7/22</p>
+        </footer>
+    </div>
+</body>
+</html>

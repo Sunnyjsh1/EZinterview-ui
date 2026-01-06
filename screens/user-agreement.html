@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>16. 약정서 승인</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>2. 약정서 승인</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>클릭 후, 약정서 승인 (4단계)</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="mobile-mockup">
+                            <div style="padding: 20px;">
+                                <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50; font-size: 1.2em;">약정서 승인</h3>
+                                
+                                <div class="process-steps" style="flex-direction: column; margin-bottom: 20px;">
+                                    <div class="process-step" style="text-align: left; padding: 12px; background-color: #ecf0f1; border-radius: 4px; margin-bottom: 8px;">
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <div class="step-number" style="width: 30px; height: 30px; line-height: 30px; font-size: 0.9em; background-color: #27ae60;">1</div>
+                                            <span style="font-size: 0.9em;"><strong>약정서 내용 확인</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="process-step" style="text-align: left; padding: 12px; background-color: #ecf0f1; border-radius: 4px; margin-bottom: 8px;">
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <div class="step-number" style="width: 30px; height: 30px; line-height: 30px; font-size: 0.9em; background-color: #27ae60;">2</div>
+                                            <span style="font-size: 0.9em;"><strong>조건 동의</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="process-step" style="text-align: left; padding: 12px; background-color: #ecf0f1; border-radius: 4px; margin-bottom: 8px;">
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <div class="step-number" style="width: 30px; height: 30px; line-height: 30px; font-size: 0.9em; background-color: #27ae60;">3</div>
+                                            <span style="font-size: 0.9em;"><strong>전자서명</strong></span>
+                                        </div>
+                                    </div>
+
+                                    <div class="process-step" style="text-align: left; padding: 12px; background-color: #ecf0f1; border-radius: 4px;">
+                                        <div style="display: flex; align-items: center; gap: 12px;">
+                                            <div class="step-number" style="width: 30px; height: 30px; line-height: 30px; font-size: 0.9em; background-color: #3498db;">4</div>
+                                            <span style="font-size: 0.9em;"><strong>승인 완료</strong></span>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card" style="margin-bottom: 15px;">
+                                    <div class="card-header" style="font-size: 0.95em;">약정서 내용</div>
+                                    <div class="card-body">
+                                        <div class="placeholder-box medium">
+                                            <p style="font-size: 0.85em; color: #555; text-align: left; line-height: 1.6;">
+                                                <strong>조사 진행 약정서</strong><br><br>
+                                                제1조 (목적)<br>
+                                                본 약정서는 이지인터뷰 서비스...<br><br>
+                                                제2조 (조사 범위)<br>
+                                                - 응답자 수: 50명<br>
+                                                - 조사 기간: 2026-01-15 ~ 01-30<br><br>
+                                                ...
+                                            </p>
+                                            <button class="btn" style="margin-top: 10px; font-size: 0.85em;">전체 보기</button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-bottom: 15px;">
+                                    <label style="display: flex; align-items: center; gap: 10px; font-size: 0.85em; cursor: pointer;">
+                                        <input type="checkbox" checked style="width: 18px; height: 18px;">
+                                        <span>약정서 내용을 확인했으며 이에 동의합니다</span>
+                                    </label>
+                                </div>
+
+                                <button class="btn btn-success btn-block btn-large">
+                                    약정서 승인
+                                </button>
+
+                                <div class="note" style="font-size: 0.8em; margin-top: 15px;">
+                                    <div class="note-title">안내</div>
+                                    <div class="note-content">승인 후 조사가 정식으로 시작됩니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">약정서 승인 현황</h3>
+                            
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">프로젝트 정보</div>
+                                <div class="card-body">
+                                    <table class="wireframe-table">
+                                        <tr>
+                                            <th style="width: 150px;">항목</th>
+                                            <th>내용</th>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>프로젝트명</strong></td>
+                                            <td>2026 신제품 만족도 조사</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>고객사</strong></td>
+                                            <td>(주)샘플컴퍼니</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>담당자</strong></td>
+                                            <td>홍길동 (hong@example.com)</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>약정서 발송일</strong></td>
+                                            <td>2026-01-10 15:30</td>
+                                        </tr>
+                                        <tr>
+                                            <td><strong>승인 상태</strong></td>
+                                            <td><span class="status-badge pending">승인 대기</span></td>
+                                        </tr>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">승인 알림 타임라인</div>
+                                <div class="card-body">
+                                    <ul class="wireframe-list">
+                                        <li>
+                                            <strong>2026-01-10 15:30</strong><br>
+                                            <span style="font-size: 0.9em; color: #555;">약정서 발송 완료</span>
+                                        </li>
+                                        <li style="background-color: #fff3cd;">
+                                            <strong>대기 중...</strong><br>
+                                            <span style="font-size: 0.9em; color: #555;">고객사 담당자 승인 대기</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="note">
+                                <div class="note-title">참고</div>
+                                <div class="note-content">
+                                    고객사가 약정서를 승인하면 자동으로 알림 메일이 발송되며, 다음 단계로 자동 진행됩니다.
+                                </div>
+                            </div>
+
+                            <div class="grid-2" style="margin-top: 20px;">
+                                <button class="btn btn-large">약정서 재발송</button>
+                                <button class="btn btn-large">고객 연락하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="user-estimate-02.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="user-guide-01.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 16/22</p>
+        </footer>
+    </div>
+</body>
+</html>

@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9. 테스트 링크 발송</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>3. 테스트 링크 발송</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>응답자 답변하기 클릭 후, 음성 답변 녹음</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 (응답자 화면) -->
+                    <div class="screen-half">
+                        <h4>사용자화면 (응답자)</h4>
+                        <div class="mobile-mockup">
+                            <div style="padding: 20px;">
+                                <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">인터뷰 시작</h3>
+                                
+                                <div class="card" style="margin-bottom: 20px;">
+                                    <div class="card-header" style="font-size: 1em;">조사 안내</div>
+                                    <div class="card-body" style="font-size: 0.9em;">
+                                        <p style="margin-bottom: 10px; color: #555;">
+                                            2026 신제품 만족도 조사에 참여해주셔서 감사합니다.
+                                        </p>
+                                        <div style="background-color: #ecf0f1; padding: 10px; border-radius: 4px; margin-top: 10px;">
+                                            <div style="margin-bottom: 5px;">📋 질문 수: 8개</div>
+                                            <div style="margin-bottom: 5px;">⏱️ 소요 시간: 약 15분</div>
+                                            <div>🎤 음성으로 답변</div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="placeholder-box medium">
+                                    <div class="icon-placeholder" style="width: 80px; height: 80px; margin: 0 auto 15px;"></div>
+                                    <p style="font-size: 1.1em; color: #2c3e50; margin-bottom: 10px;"><strong>준비되셨나요?</strong></p>
+                                    <p style="font-size: 0.85em; color: #7f8c8d;">시작 버튼을 누르면<br>AI 모더레이터가 질문을 시작합니다</p>
+                                </div>
+
+                                <button class="btn btn-primary btn-block btn-large" style="margin-top: 20px;">
+                                    🎤 인터뷰 시작하기
+                                </button>
+
+                                <div class="note" style="font-size: 0.85em; margin-top: 15px;">
+                                    <div class="note-title">알림</div>
+                                    <div class="note-content">
+                                        • 음성 녹음 권한이 필요합니다<br>
+                                        • 조용한 장소에서 진행해주세요<br>
+                                        • 중간에 저장 가능합니다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">테스트 링크 발송</h3>
+                            
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">프로젝트 정보</div>
+                                <div class="card-body">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <strong>프로젝트:</strong>
+                                        <span>2026 신제품 만족도 조사</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <strong>목표 응답자:</strong>
+                                        <span>50명</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <strong>현재 상태:</strong>
+                                        <span class="status-badge in-progress">테스트 준비</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">인터뷰 링크</div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>고유 링크</label>
+                                        <div style="display: flex; gap: 10px;">
+                                            <div class="form-input" style="flex: 1; background-color: #ecf0f1; color: #555; font-family: monospace; font-size: 0.9em;">
+                                                https://easyinterview.com/survey/abc123xyz
+                                            </div>
+                                            <button class="btn">복사</button>
+                                        </div>
+                                    </div>
+
+                                    <div class="placeholder-box small" style="margin-top: 15px;">
+                                        <p style="font-size: 0.9em;">QR 코드</p>
+                                        <div style="width: 100px; height: 100px; border: 2px solid #95a5a6; margin: 10px auto;"></div>
+                                        <button class="btn" style="font-size: 0.85em;">다운로드</button>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">응답자에게 발송</div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>이메일 주소 (쉼표로 구분)</label>
+                                        <div class="form-input large" style="background-color: #ecf0f1; color: #7f8c8d;">
+                                            user1@example.com, user2@example.com, user3@example.com
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label>발송 메시지 템플릿</label>
+                                        <div class="form-select" style="background-color: #ecf0f1; color: #7f8c8d;">
+                                            표준 초대 메시지
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-2">
+                                <button class="btn btn-large">미리보기</button>
+                                <button class="btn btn-primary btn-large">링크 발송</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="admin-guide-review.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="admin-survey-status.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 9/22</p>
+        </footer>
+    </div>
+</body>
+</html>

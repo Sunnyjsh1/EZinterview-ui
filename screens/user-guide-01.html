@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>17. 가이드 생성 (1)</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>3. 가이드 생성 (1)</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>가이드 생성 4단계</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="mobile-mockup">
+                            <div style="padding: 20px;">
+                                <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50; font-size: 1.2em;">인터뷰 가이드 생성</h3>
+                                
+                                <div class="card" style="margin-bottom: 20px;">
+                                    <div class="card-header" style="font-size: 0.95em;">진행 단계</div>
+                                    <div class="card-body">
+                                        <div class="process-steps" style="flex-direction: column;">
+                                            <div class="process-step" style="text-align: left; padding: 12px; background-color: #e3f2fd; border-left: 3px solid #3498db; margin-bottom: 8px;">
+                                                <div style="display: flex; align-items: center; gap: 12px;">
+                                                    <div class="step-number" style="width: 30px; height: 30px; line-height: 30px; font-size: 0.9em; background-color: #3498db;">1</div>
+                                                    <span style="font-size: 0.9em;"><strong>인터뷰 목적 입력</strong></span>
+                                                </div>
+                                            </div>
+
+                                            <div class="process-step" style="text-align: left; padding: 12px; background-color: #f8f9fa; border: 2px dashed #bdc3c7; margin-bottom: 8px;">
+                                                <div style="display: flex; align-items: center; gap: 12px;">
+                                                    <div class="step-number" style="width: 30px; height: 30px; line-height: 30px; font-size: 0.9em; background-color: #95a5a6;">2</div>
+                                                    <span style="font-size: 0.9em;">AI 질문 추천</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="process-step" style="text-align: left; padding: 12px; background-color: #f8f9fa; border: 2px dashed #bdc3c7; margin-bottom: 8px;">
+                                                <div style="display: flex; align-items: center; gap: 12px;">
+                                                    <div class="step-number" style="width: 30px; height: 30px; line-height: 30px; font-size: 0.9em; background-color: #95a5a6;">3</div>
+                                                    <span style="font-size: 0.9em;">질문 편집 및 추가</span>
+                                                </div>
+                                            </div>
+
+                                            <div class="process-step" style="text-align: left; padding: 12px; background-color: #f8f9fa; border: 2px dashed #bdc3c7;">
+                                                <div style="display: flex; align-items: center; gap: 12px;">
+                                                    <div class="step-number" style="width: 30px; height: 30px; line-height: 30px; font-size: 0.9em; background-color: #95a5a6;">4</div>
+                                                    <span style="font-size: 0.9em;">가이드 제출</span>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="note" style="margin-bottom: 15px; font-size: 0.85em;">
+                                    <div class="note-title">💡 AI 도움말</div>
+                                    <div class="note-content">
+                                        인터뷰 목적을 입력하면 AI가 최적의 질문을 자동으로 추천해드립니다.
+                                    </div>
+                                </div>
+
+                                <button class="btn btn-primary btn-block btn-large">
+                                    시작하기
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">가이드 생성 모니터링</h3>
+                            
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">프로젝트 현황</div>
+                                <div class="card-body">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <strong>프로젝트:</strong>
+                                        <span>2026 신제품 만족도 조사</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <strong>고객사:</strong>
+                                        <span>(주)샘플컴퍼니</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <strong>현재 단계:</strong>
+                                        <span class="status-badge in-progress">가이드 작성 중</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">타임라인</div>
+                                <div class="card-body">
+                                    <ul class="wireframe-list">
+                                        <li>
+                                            <strong>2026-01-10 10:30</strong><br>
+                                            <span style="font-size: 0.9em; color: #555;">조사 문의 접수</span>
+                                        </li>
+                                        <li>
+                                            <strong>2026-01-10 15:30</strong><br>
+                                            <span style="font-size: 0.9em; color: #555;">약정서 발송</span>
+                                        </li>
+                                        <li>
+                                            <strong>2026-01-11 09:20</strong><br>
+                                            <span style="font-size: 0.9em; color: #555;">약정서 승인 완료</span>
+                                        </li>
+                                        <li style="background-color: #e3f2fd;">
+                                            <strong>2026-01-11 10:00</strong><br>
+                                            <span style="font-size: 0.9em; color: #555;">가이드 작성 시작</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+
+                            <div class="placeholder-box medium">
+                                <div class="icon-placeholder" style="width: 50px; height: 50px; margin: 0 auto 15px;"></div>
+                                <p style="color: #7f8c8d; font-size: 0.95em;">고객사 가이드 작성 대기 중</p>
+                                <p style="color: #95a5a6; font-size: 0.85em; margin-top: 10px;">작성 완료 시 자동 알림</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="wireframe-section">
+                <h3>가이드 생성 프로세스</h3>
+                <div class="process-steps">
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #3498db;">1</div>
+                        <div class="step-label">목적 입력</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #95a5a6;">2</div>
+                        <div class="step-label">AI 추천</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #95a5a6;">3</div>
+                        <div class="step-label">편집</div>
+                    </div>
+                    <div class="process-step">
+                        <div class="step-number" style="background-color: #95a5a6;">4</div>
+                        <div class="step-label">제출</div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="user-agreement.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="user-guide-02.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 17/22</p>
+        </footer>
+    </div>
+</body>
+</html>

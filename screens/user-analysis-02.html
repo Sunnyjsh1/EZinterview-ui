@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>20. 분석결과 확인 (2)</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>4. 분석결과 확인 (2)</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>응답 스크립트 엑셀, 워드 파일 다운로드 / 응답자별 스크립트, 서머리 확인 가능</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="mobile-mockup">
+                            <div style="padding: 20px;">
+                                <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50; font-size: 1.2em;">응답 스크립트</h3>
+                                
+                                <div class="card" style="margin-bottom: 15px;">
+                                    <div class="card-header" style="font-size: 0.95em;">다운로드</div>
+                                    <div class="card-body">
+                                        <div style="display: flex; flex-direction: column; gap: 10px;">
+                                            <button class="btn" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                                                <span style="font-size: 0.9em;">📄 전체 스크립트 (워드)</span>
+                                                <span style="font-size: 0.75em; color: #7f8c8d;">2.3 MB</span>
+                                            </button>
+                                            <button class="btn" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                                                <span style="font-size: 0.9em;">📊 전체 스크립트 (엑셀)</span>
+                                                <span style="font-size: 0.75em; color: #7f8c8d;">1.8 MB</span>
+                                            </button>
+                                            <button class="btn" style="display: flex; align-items: center; justify-content: space-between; width: 100%;">
+                                                <span style="font-size: 0.9em;">💡 핵심 서머리 (PDF)</span>
+                                                <span style="font-size: 0.75em; color: #7f8c8d;">850 KB</span>
+                                            </button>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="card" style="margin-bottom: 15px;">
+                                    <div class="card-header" style="font-size: 0.95em;">응답자별 보기</div>
+                                    <div class="card-body">
+                                        <div style="margin-bottom: 10px;">
+                                            <select class="form-select" style="width: 100%; font-size: 0.9em;">
+                                                <option>응답자 001</option>
+                                                <option>응답자 002</option>
+                                                <option>응답자 003</option>
+                                                <option>...외 47명</option>
+                                            </select>
+                                        </div>
+                                        <button class="btn btn-primary btn-block">선택한 응답 보기</button>
+                                    </div>
+                                </div>
+
+                                <div class="note" style="font-size: 0.8em;">
+                                    <div class="note-title">안내</div>
+                                    <div class="note-content">
+                                        • 스크립트는 AI가 자동 변환한 내용입니다<br>
+                                        • 원본 음성 파일도 포함되어 있습니다
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">스크립트 & 서머리 관리</h3>
+                            
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">파일 생성 및 다운로드</div>
+                                <div class="card-body">
+                                    <table class="wireframe-table">
+                                        <thead>
+                                            <tr>
+                                                <th>파일명</th>
+                                                <th style="width: 100px;">형식</th>
+                                                <th style="width: 100px;">크기</th>
+                                                <th style="width: 120px;">상태</th>
+                                                <th style="width: 100px;">작업</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td>전체_응답_스크립트</td>
+                                                <td>.docx</td>
+                                                <td>2.3 MB</td>
+                                                <td><span class="status-badge approved">생성완료</span></td>
+                                                <td><button class="btn" style="padding: 4px 12px; font-size: 0.85em;">다운로드</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>전체_응답_스크립트</td>
+                                                <td>.xlsx</td>
+                                                <td>1.8 MB</td>
+                                                <td><span class="status-badge approved">생성완료</span></td>
+                                                <td><button class="btn" style="padding: 4px 12px; font-size: 0.85em;">다운로드</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>핵심_서머리</td>
+                                                <td>.pdf</td>
+                                                <td>850 KB</td>
+                                                <td><span class="status-badge approved">생성완료</span></td>
+                                                <td><button class="btn" style="padding: 4px 12px; font-size: 0.85em;">다운로드</button></td>
+                                            </tr>
+                                            <tr>
+                                                <td>원본_음성_파일</td>
+                                                <td>.zip</td>
+                                                <td>125 MB</td>
+                                                <td><span class="status-badge approved">생성완료</span></td>
+                                                <td><button class="btn" style="padding: 4px 12px; font-size: 0.85em;">다운로드</button></td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">응답자별 스크립트 미리보기</div>
+                                <div class="card-body">
+                                    <div class="form-group" style="margin-bottom: 15px;">
+                                        <label>응답자 선택</label>
+                                        <select class="form-select">
+                                            <option>응답자 001 - 완료 (15분 20초)</option>
+                                            <option>응답자 002 - 완료 (13분 45초)</option>
+                                            <option>응답자 003 - 완료 (14분 10초)</option>
+                                            <option>...외 47명</option>
+                                        </select>
+                                    </div>
+
+                                    <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; max-height: 200px; overflow-y: auto;">
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #2c3e50;">Q1. 우리 제품에 대해 어떻게 알게 되셨나요?</strong>
+                                            <p style="margin-top: 8px; line-height: 1.7; color: #555; font-size: 0.95em;">
+                                                "친구의 추천으로 알게 되었습니다. 제가 평소에 이런 제품에 관심이 많았는데..."
+                                            </p>
+                                        </div>
+                                        <div style="margin-bottom: 15px;">
+                                            <strong style="color: #2c3e50;">Q2. 제품을 구매하신 주된 이유는?</strong>
+                                            <p style="margin-top: 8px; line-height: 1.7; color: #555; font-size: 0.95em;">
+                                                "가격 대비 성능이 좋다는 평이 많아서 구매했습니다..."
+                                            </p>
+                                        </div>
+                                        <div style="text-align: center; color: #95a5a6; font-size: 0.9em;">
+                                            외 6개 질문...
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-2">
+                                <button class="btn btn-large">전체 파일 압축 다운로드</button>
+                                <button class="btn btn-primary btn-large">고객사 전달</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="user-analysis-01.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="user-analysis-03.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 20/22</p>
+        </footer>
+    </div>
+</body>
+</html>

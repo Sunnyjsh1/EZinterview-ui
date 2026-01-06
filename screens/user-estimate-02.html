@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>15. 모의 견적 산출 및 조사 문의 (2)</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>1. 모의 견적 산출 및 조사 문의 (2)</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>내용 입력 후, 조사 문의 접수 / 관리자에게 조사 문의 접수 메일 도착</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="mobile-mockup">
+                            <div style="padding: 20px;">
+                                <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50; font-size: 1.2em;">조사 문의 접수</h3>
+                                
+                                <div class="card" style="margin-bottom: 20px;">
+                                    <div class="card-header" style="font-size: 0.95em;">예상 견적</div>
+                                    <div class="card-body">
+                                        <div style="text-align: center; padding: 20px 0;">
+                                            <div style="font-size: 0.9em; color: #7f8c8d; margin-bottom: 5px;">총 예상 비용</div>
+                                            <div style="font-size: 2.5em; color: #3498db; font-weight: bold;">₩2,500,000</div>
+                                            <div style="font-size: 0.85em; color: #95a5a6; margin-top: 5px;">VAT 별도</div>
+                                        </div>
+                                        
+                                        <div style="border-top: 1px solid #ecf0f1; padding-top: 15px; font-size: 0.85em;">
+                                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                                <span style="color: #7f8c8d;">응답자 수:</span>
+                                                <strong>50명</strong>
+                                            </div>
+                                            <div style="display: flex; justify-content: space-between; margin-bottom: 8px;">
+                                                <span style="color: #7f8c8d;">질문 수:</span>
+                                                <strong>8개</strong>
+                                            </div>
+                                            <div style="display: flex; justify-content: space-between;">
+                                                <span style="color: #7f8c8d;">조사 기간:</span>
+                                                <strong>15일</strong>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="wireframe-form">
+                                    <div class="form-group">
+                                        <label style="font-size: 0.9em;">담당자 성함</label>
+                                        <div class="form-input" style="background-color: #ecf0f1; color: #7f8c8d; font-size: 0.9em;">
+                                            홍길동
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label style="font-size: 0.9em;">이메일</label>
+                                        <div class="form-input" style="background-color: #ecf0f1; color: #7f8c8d; font-size: 0.9em;">
+                                            hong@example.com
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label style="font-size: 0.9em;">연락처</label>
+                                        <div class="form-input" style="background-color: #ecf0f1; color: #7f8c8d; font-size: 0.9em;">
+                                            010-1234-5678
+                                        </div>
+                                    </div>
+
+                                    <div class="form-group">
+                                        <label style="font-size: 0.9em;">추가 문의사항 (선택)</label>
+                                        <div class="form-input large" style="background-color: #ecf0f1; color: #7f8c8d; font-size: 0.85em;">
+                                            응답자 모집 지원 가능한가요?
+                                        </div>
+                                    </div>
+
+                                    <button class="btn btn-success btn-block btn-large">
+                                        조사 문의 접수
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">조사 문의 접수 알림</h3>
+                            
+                            <div class="card" style="margin-bottom: 20px; border-left: 4px solid #3498db;">
+                                <div class="card-header">📧 새로운 조사 문의</div>
+                                <div class="card-body">
+                                    <div style="background-color: #f8f9fa; padding: 20px; border-radius: 4px; font-family: monospace; font-size: 0.9em;">
+                                        <div style="margin-bottom: 15px;">
+                                            <strong>제목:</strong> [이지인터뷰] 새로운 조사 문의가 접수되었습니다
+                                        </div>
+                                        <div style="margin-bottom: 15px;">
+                                            <strong>발신:</strong> noreply@easyinterview.com
+                                        </div>
+                                        <div style="margin-bottom: 15px;">
+                                            <strong>수신:</strong> admin@nkmr.com
+                                        </div>
+                                        <div style="margin-bottom: 15px;">
+                                            <strong>일시:</strong> 2026-01-10 10:30:25
+                                        </div>
+                                        <hr style="border: none; border-top: 1px solid #ecf0f1; margin: 15px 0;">
+                                        <div style="line-height: 1.8; color: #333;">
+                                            안녕하세요,<br><br>
+                                            새로운 조사 문의가 접수되었습니다.<br><br>
+                                            <strong>고객 정보:</strong><br>
+                                            - 담당자: 홍길동<br>
+                                            - 이메일: hong@example.com<br>
+                                            - 연락처: 010-1234-5678<br><br>
+                                            <strong>조사 정보:</strong><br>
+                                            - 응답자 수: 50명<br>
+                                            - 질문 수: 8개<br>
+                                            - 조사 기간: 15일<br>
+                                            - 예상 비용: ₩2,500,000<br><br>
+                                            <strong>추가 문의사항:</strong><br>
+                                            응답자 모집 지원 가능한가요?
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-2">
+                                <button class="btn btn-large">나중에 처리</button>
+                                <button class="btn btn-primary btn-large">프로젝트 등록하기</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="user-estimate-01.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="user-agreement.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 15/22</p>
+        </footer>
+    </div>
+</body>
+</html>

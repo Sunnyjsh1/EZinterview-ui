@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>8. 가이드 생성 검토</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>2. 가이드 생성 검토</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>사용자가 생성한 인터뷰 가이드 검토</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="mobile-mockup">
+                            <div style="padding: 15px;">
+                                <h3 style="text-align: center; margin-bottom: 20px; color: #2c3e50; font-size: 1.2em;">가이드 제출 완료</h3>
+                                
+                                <div class="placeholder-box medium">
+                                    <div class="icon-placeholder" style="width: 60px; height: 60px; margin: 0 auto 15px;"></div>
+                                    <p style="color: #7f8c8d; font-size: 0.95em;">가이드를 제출했습니다</p>
+                                    <p style="color: #95a5a6; font-size: 0.85em; margin-top: 10px;">관리자 검토 대기 중</p>
+                                </div>
+
+                                <div class="card" style="margin-top: 20px;">
+                                    <div class="card-header" style="font-size: 0.95em;">제출 내용</div>
+                                    <div class="card-body" style="font-size: 0.85em;">
+                                        <div style="margin-bottom: 8px;">
+                                            <strong>질문 수:</strong> 8개
+                                        </div>
+                                        <div style="margin-bottom: 8px;">
+                                            <strong>예상 소요시간:</strong> 15분
+                                        </div>
+                                        <div>
+                                            <strong>제출일시:</strong> 2026-01-10 14:30
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="note" style="font-size: 0.85em; margin-top: 15px;">
+                                    <div class="note-title">안내</div>
+                                    <div class="note-content">검토 결과는 이메일로 안내드립니다.</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">인터뷰 가이드 검토</h3>
+                            
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">가이드 기본 정보</div>
+                                <div class="card-body">
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <strong>프로젝트:</strong>
+                                        <span>2026 신제품 만족도 조사</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between; margin-bottom: 10px;">
+                                        <strong>작성자:</strong>
+                                        <span>홍길동 (고객사 담당자)</span>
+                                    </div>
+                                    <div style="display: flex; justify-content: space-between;">
+                                        <strong>제출일:</strong>
+                                        <span>2026-01-10 14:30</span>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">인터뷰 질문 목록 (8개)</div>
+                                <div class="card-body">
+                                    <ul class="wireframe-list">
+                                        <li>
+                                            <strong>Q1.</strong> 우리 제품에 대해 어떻게 알게 되셨나요?
+                                        </li>
+                                        <li>
+                                            <strong>Q2.</strong> 제품을 구매하신 주된 이유는 무엇인가요?
+                                        </li>
+                                        <li>
+                                            <strong>Q3.</strong> 제품 사용 중 가장 만족스러운 점은 무엇인가요?
+                                        </li>
+                                        <li>
+                                            <strong>Q4.</strong> 개선이 필요한 부분이 있다면 말씀해주세요.
+                                        </li>
+                                        <li style="color: #95a5a6;">
+                                            나머지 질문 4개...
+                                        </li>
+                                    </ul>
+                                    <button class="btn" style="margin-top: 15px; width: 100%;">전체 질문 보기</button>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">검토 의견</div>
+                                <div class="card-body">
+                                    <div class="form-group">
+                                        <label>피드백 (선택)</label>
+                                        <div class="form-input large" style="background-color: #ecf0f1; color: #7f8c8d;">
+                                            전반적으로 좋은 질문 구성입니다. Q3과 Q4를 좀 더 구체적으로 작성하시면 더 좋을 것 같습니다.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="grid-2">
+                                <button class="btn btn-large" style="background-color: #e74c3c; border-color: #e74c3c; color: #fff;">
+                                    수정 요청
+                                </button>
+                                <button class="btn btn-success btn-large">
+                                    승인 및 진행
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="admin-survey-info.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="admin-test-link.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 8/22</p>
+        </footer>
+    </div>
+</body>
+</html>

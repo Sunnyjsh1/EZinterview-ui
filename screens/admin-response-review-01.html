@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>11. 응답내용 검수 (1)</title>
+    <link rel="stylesheet" href="../css/style.css">
+</head>
+<body>
+    <div class="container">
+        <header class="wireframe-header">
+            <h1>5. 응답내용 검수 (1)</h1>
+            <span class="screen-type both">사용자화면 / 관리자화면</span>
+        </header>
+
+        <main class="screen-content">
+            <div class="wireframe-section">
+                <h3>응답자 응답 녹음파일, 스크립트 확인 가능</h3>
+                
+                <div class="two-screens">
+                    <!-- 사용자화면 -->
+                    <div class="screen-half">
+                        <h4>사용자화면</h4>
+                        <div class="placeholder-box large">
+                            <p style="color: #7f8c8d; font-size: 0.95em;">사용자는 이 단계에서 대기 상태</p>
+                            <p style="color: #95a5a6; font-size: 0.85em; margin-top: 10px;">관리자 검수 진행 중</p>
+                        </div>
+                    </div>
+
+                    <!-- 관리자화면 -->
+                    <div class="screen-half">
+                        <h4>관리자화면</h4>
+                        <div class="desktop-mockup">
+                            <h3 style="text-align: center; margin-bottom: 25px; color: #2c3e50;">응답 내용 검수</h3>
+                            
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">응답자 정보</div>
+                                <div class="card-body">
+                                    <div class="grid-2">
+                                        <div>
+                                            <strong>응답자 ID:</strong> 001
+                                        </div>
+                                        <div>
+                                            <strong>응답 일시:</strong> 2026-01-15 14:30
+                                        </div>
+                                        <div>
+                                            <strong>소요 시간:</strong> 15분 20초
+                                        </div>
+                                        <div>
+                                            <strong>완료율:</strong> 100%
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card" style="margin-bottom: 20px;">
+                                <div class="card-header">질문 1: 우리 제품에 대해 어떻게 알게 되셨나요?</div>
+                                <div class="card-body">
+                                    <div style="margin-bottom: 15px;">
+                                        <strong>🎤 음성 녹음</strong>
+                                        <div style="background-color: #ecf0f1; padding: 15px; border-radius: 4px; margin-top: 10px;">
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <div style="width: 40px; height: 40px; background-color: #3498db; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2em;">
+                                                    ▶
+                                                </div>
+                                                <div style="flex: 1; height: 4px; background-color: #bdc3c7; border-radius: 2px; position: relative;">
+                                                    <div style="width: 45%; height: 100%; background-color: #3498db; border-radius: 2px;"></div>
+                                                </div>
+                                                <span style="font-size: 0.9em; color: #555;">1:23 / 2:45</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <strong>📝 스크립트 (자동 변환)</strong>
+                                        <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 10px; border-left: 3px solid #3498db;">
+                                            <p style="line-height: 1.8; color: #333;">
+                                                "친구의 추천으로 알게 되었습니다. 제가 평소에 이런 제품에 관심이 많았는데, 친구가 먼저 사용해보고 좋다고 해서 저도 구매하게 되었어요. 온라인 리뷰도 많이 찾아봤고, 전반적으로 평가가 좋더라구요."
+                                            </p>
+                                        </div>
+                                    </div>
+
+                                    <div style="margin-top: 15px;">
+                                        <strong>✅ 검수 상태</strong>
+                                        <div style="display: flex; gap: 10px; margin-top: 10px;">
+                                            <button class="btn" style="flex: 1; background-color: #27ae60; border-color: #27ae60; color: #fff;">승인</button>
+                                            <button class="btn" style="flex: 1; background-color: #e74c3c; border-color: #e74c3c; color: #fff;">재검토 필요</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="card">
+                                <div class="card-header">질문 2: 제품을 구매하신 주된 이유는?</div>
+                                <div class="card-body">
+                                    <div style="margin-bottom: 15px;">
+                                        <strong>🎤 음성 녹음</strong>
+                                        <div style="background-color: #ecf0f1; padding: 15px; border-radius: 4px; margin-top: 10px;">
+                                            <div style="display: flex; align-items: center; gap: 10px;">
+                                                <div style="width: 40px; height: 40px; background-color: #3498db; border-radius: 50%; display: flex; align-items: center; justify-content: center; color: #fff; font-size: 1.2em;">
+                                                    ▶
+                                                </div>
+                                                <div style="flex: 1; height: 4px; background-color: #bdc3c7; border-radius: 2px;"></div>
+                                                <span style="font-size: 0.9em; color: #555;">0:00 / 1:58</span>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div>
+                                        <strong>📝 스크립트 (자동 변환)</strong>
+                                        <div style="background-color: #f8f9fa; padding: 15px; border-radius: 4px; margin-top: 10px; border-left: 3px solid #3498db;">
+                                            <p style="line-height: 1.8; color: #333;">
+                                                "가격 대비 성능이 좋다는 평이 많아서 구매했습니다..."
+                                            </p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div style="text-align: center; margin-top: 20px; color: #95a5a6;">
+                                나머지 6개 질문...
+                            </div>
+
+                            <div style="display: flex; gap: 10px; margin-top: 30px;">
+                                <button class="btn btn-large" style="flex: 1;">이전 응답자</button>
+                                <button class="btn btn-large" style="flex: 1;">전체 저장</button>
+                                <button class="btn btn-primary btn-large" style="flex: 1;">다음 응답자</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </main>
+
+        <nav class="navigation">
+            <a href="admin-survey-status.html" class="nav-btn">← 이전</a>
+            <a href="../index.html" class="nav-home">목차</a>
+            <a href="admin-response-review-02.html" class="nav-btn">다음 →</a>
+        </nav>
+
+        <footer class="wireframe-footer">
+            <p>이지인터뷰 UI 프로토타입 | 화면 11/22</p>
+        </footer>
+    </div>
+</body>
+</html>
