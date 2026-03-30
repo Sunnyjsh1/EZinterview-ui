@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>챗봇 캐릭터 최종안 — EasyInterview</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, 'Segoe UI', sans-serif; background: #f5f6f8; color: #1a1a1a; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+
+  .container { max-width: 480px; width: 100%; padding: 48px 32px; }
+  .back { font-size: 13px; color: #6b7280; text-decoration: none; display: inline-block; margin-bottom: 24px; }
+  .back:hover { color: #4338ca; }
+  h1 { font-size: 20px; font-weight: 700; margin-bottom: 4px; }
+  .subtitle { font-size: 13px; color: #9ca3af; margin-bottom: 32px; }
+
+  .preview-card { background: #fff; border: 1px solid #e5e7eb; border-radius: 16px; padding: 40px; display: flex; flex-direction: column; align-items: center; gap: 24px; }
+  .preview-label { font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; }
+
+  /* Character */
+  .char-c { width: 80px; height: 80px; position: relative; }
+  .char-c .bubble { width: 80px; height: 68px; background: #4338ca; border-radius: 28px; position: relative; box-shadow: 0 4px 16px rgba(67,56,202,0.4); }
+  .char-c .bubble::after { content: ''; position: absolute; bottom: -11px; right: 16px; width: 0; height: 0; border-left: 14px solid transparent; border-top: 14px solid #4338ca; }
+  .char-c .eyes { position: absolute; top: 22px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; }
+  .char-c .eye { width: 10px; height: 12px; background: #fff; border-radius: 50%; animation: look-blink-c 5s ease-in-out infinite; position: relative; overflow: hidden; }
+  .char-c .eye::after { content: ''; position: absolute; top: -12px; left: 0; width: 100%; height: 100%; background: #4338ca; animation: lid-c 5s ease-in-out infinite; }
+  .char-c .eye-r, .char-c .eye-r::after { animation-delay: 0.05s; }
+  .char-c .sparkle { position: absolute; top: -6px; right: -4px; font-size: 16px; animation: sparkle-c 2s ease-in-out infinite; }
+  @keyframes look-blink-c { 0%,100%{transform:translateX(0);} 20%{transform:translateX(2px);} 40%{transform:translateX(-2px);} 60%{transform:translateX(0);} }
+  @keyframes lid-c { 0%,72%,80%,100%{top:-12px;} 75%,77%{top:0;} }
+  @keyframes sparkle-c { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.8);} }
+
+  .char-name { font-size: 16px; font-weight: 700; color: #4338ca; }
+
+  /* Specs */
+  .spec-table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+  .spec-table th { text-align: left; font-size: 12px; font-weight: 600; color: #6b7280; padding: 8px 12px; border-bottom: 1px solid #e5e7eb; }
+  .spec-table td { font-size: 13px; color: #374151; padding: 8px 12px; border-bottom: 1px solid #f3f4f6; }
+  .spec-table tr:last-child td { border-bottom: none; }
+
+  /* Nudge demo */
+  .nudge-demo { display: flex; align-items: flex-end; gap: 12px; margin-top: 16px; }
+  .nudge-bubble { background: #fff; border: 1px solid #e0e7ff; border-radius: 12px 12px 4px 12px; padding: 10px 16px; font-size: 13px; color: #4338ca; font-weight: 500; box-shadow: 0 4px 16px rgba(0,0,0,0.08); }
+  .nudge-char { width: 56px; height: 56px; position: relative; flex-shrink: 0; }
+  .nudge-char .bubble { width: 56px; height: 48px; background: #4338ca; border-radius: 20px; position: relative; box-shadow: 0 4px 16px rgba(67,56,202,0.4); }
+  .nudge-char .bubble::after { content: ''; position: absolute; bottom: -8px; right: 12px; width: 0; height: 0; border-left: 10px solid transparent; border-top: 10px solid #4338ca; }
+  .nudge-char .eyes { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+  .nudge-char .eye { width: 7px; height: 8px; background: #fff; border-radius: 50%; animation: look-blink-c 5s ease-in-out infinite; position: relative; overflow: hidden; }
+  .nudge-char .eye::after { content: ''; position: absolute; top: -8px; left: 0; width: 100%; height: 100%; background: #4338ca; animation: lid-c 5s ease-in-out infinite; }
+  .nudge-char .eye-r, .nudge-char .eye-r::after { animation-delay: 0.05s; }
+  .nudge-char .sparkle { position: absolute; top: -4px; right: -2px; font-size: 12px; animation: sparkle-c 2s ease-in-out infinite; }
+
+  .section-title { font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; width: 100%; text-align: left; margin-top: 12px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <a class="back" href="../index.html">&larr; 돌아가기</a>
+  <h1>챗봇 캐릭터 최종안</h1>
+  <div class="subtitle">Option C — 말풍선 캐릭터</div>
+
+  <div class="preview-card">
+    <div class="preview-label">Character Preview</div>
+
+    <div class="char-c">
+      <div class="bubble">
+        <div class="sparkle">✦</div>
+        <div class="eyes">
+          <div class="eye eye-l"></div>
+          <div class="eye eye-r"></div>
+        </div>
+      </div>
+    </div>
+
+    <div class="char-name">AI 분석 어시스턴트</div>
+
+    <table class="spec-table">
+      <tr><th>항목</th><th>스펙</th></tr>
+      <tr><td>형태</td><td>말풍선 + 눈 + 스파클</td></tr>
+      <tr><td>메인 색상</td><td>#4338ca (Indigo)</td></tr>
+      <tr><td>크기 (FAB)</td><td>56 × 48 px</td></tr>
+      <tr><td>애니메이션</td><td>눈 깜빡임 (5s) + 좌우 시선 + 스파클 (2s)</td></tr>
+      <tr><td>그림자</td><td>0 4px 16px rgba(67,56,202,0.4)</td></tr>
+    </table>
+
+    <div class="section-title">Nudge 상태</div>
+    <div class="nudge-demo">
+      <div class="nudge-bubble">궁금한 내용은 언제든 질문하세요</div>
+      <div class="nudge-char">
+        <div class="bubble">
+          <div class="sparkle">✦</div>
+          <div class="eyes">
+            <div class="eye eye-l"></div>
+            <div class="eye eye-r"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+</body>
+</html>
