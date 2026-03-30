@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R2. 응답 요약 — EasyInterview Result</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, 'Segoe UI', sans-serif; background: #f5f6f8; color: #1a1a1a; }
+
+  .header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .header h1 { font-size: 20px; font-weight: 700; }
+  .header .badge { background: #e0e7ff; color: #4338ca; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 12px; margin-left: 12px; }
+  .btn { padding: 8px 16px; border-radius: 8px; border: 1px solid #d1d5db; background: #fff; font-size: 13px; cursor: pointer; font-weight: 500; }
+
+  .tab-bar { display: flex; gap: 0; border-bottom: 2px solid #e5e7eb; background: #fff; padding: 0 32px; }
+  .tab { padding: 12px 20px; font-size: 14px; font-weight: 500; color: #6b7280; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; text-decoration: none; }
+  .tab:hover { color: #4338ca; }
+  .tab.active { color: #4338ca; border-bottom-color: #4338ca; }
+
+  .filter-bar { background: #fff; padding: 12px 32px; border-bottom: 1px solid #e5e7eb; display: flex; gap: 12px; align-items: center; flex-wrap: wrap; }
+  .filter-label { font-size: 13px; color: #6b7280; font-weight: 500; }
+  .filter-select { padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px; background: #fff; }
+  .filter-tag { background: #dbeafe; color: #1d4ed8; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 4px; }
+  .filter-tag .x { cursor: pointer; font-weight: 700; }
+  .filter-count { font-size: 12px; color: #9ca3af; margin-left: auto; }
+
+  .layout { display: flex; height: calc(100vh - 160px); }
+
+  /* Left sidebar — question nav */
+  .sidebar { width: 220px; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; overflow-y: auto; flex-shrink: 0; }
+  .sidebar-title { padding: 8px 20px; font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; }
+  .q-item { padding: 10px 20px; font-size: 13px; cursor: pointer; color: #6b7280; border-left: 3px solid transparent; }
+  .q-item:hover { background: #f9fafb; }
+  .q-item.active { background: #eef2ff; color: #4338ca; font-weight: 600; border-left-color: #4338ca; }
+  .q-item .q-num { font-weight: 700; margin-right: 6px; }
+
+  .main { flex: 1; padding: 28px 36px; overflow-y: auto; }
+
+  .question-banner { background: #eef2ff; border-radius: 10px; padding: 14px 18px; margin-bottom: 20px; }
+  .question-banner .q-label { font-size: 12px; font-weight: 700; color: #4338ca; margin-bottom: 4px; }
+  .question-banner .q-text { font-size: 15px; font-weight: 600; color: #1e1b4b; }
+
+  .summary-info { font-size: 13px; color: #6b7280; margin-bottom: 16px; }
+  .summary-info strong { color: #1a1a1a; }
+
+  .cards { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 16px; }
+  .card { background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; padding: 20px; transition: box-shadow 0.15s; }
+  .card:hover { box-shadow: 0 4px 12px rgba(0,0,0,0.08); }
+
+  .card-header { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; }
+  .respondent-id { font-size: 15px; font-weight: 700; }
+  .respondent-time { font-size: 12px; color: #9ca3af; }
+
+  .demo-tags { display: flex; gap: 6px; flex-wrap: wrap; margin-bottom: 12px; }
+  .demo-tag { font-size: 11px; padding: 3px 8px; border-radius: 10px; font-weight: 500; }
+  .demo-tag.gender { background: #fce7f3; color: #be185d; }
+  .demo-tag.age { background: #e0e7ff; color: #4338ca; }
+  .demo-tag.region { background: #d1fae5; color: #065f46; }
+  .demo-tag.usage { background: #fef3c7; color: #92400e; }
+
+  .card-summary { font-size: 14px; line-height: 1.7; color: #374151; }
+  .card-summary .highlight { background: #fef08a; padding: 1px 3px; border-radius: 2px; }
+
+  /* Chatbot */
+  .chat-toggle { position: fixed; bottom: 28px; right: 28px; width: 56px; height: 56px; border-radius: 50%; background: #4338ca; color: #fff; border: none; font-size: 26px; cursor: pointer; box-shadow: 0 4px 16px rgba(67,56,202,0.4); z-index: 1000; display: flex; align-items: center; justify-content: center; }
+  .chat-panel { position: fixed; bottom: 96px; right: 28px; width: 400px; height: 520px; background: #fff; border-radius: 16px; box-shadow: 0 8px 32px rgba(0,0,0,0.18); z-index: 1000; display: none; flex-direction: column; overflow: hidden; }
+  .chat-panel.open { display: flex; }
+  .chat-header { background: #4338ca; color: #fff; padding: 16px 20px; display: flex; justify-content: space-between; align-items: center; }
+  .chat-header-title { font-size: 15px; font-weight: 700; }
+  .chat-close { background: none; border: none; color: #fff; font-size: 20px; cursor: pointer; }
+  .chat-messages { flex: 1; padding: 16px; overflow-y: auto; }
+  .chat-msg { margin-bottom: 12px; }
+  .chat-msg.bot .bubble { background: #f3f4f6; border-radius: 12px 12px 12px 2px; padding: 10px 14px; font-size: 13px; line-height: 1.6; color: #1a1a1a; display: inline-block; max-width: 90%; }
+  .chat-chips { display: flex; flex-wrap: wrap; gap: 6px; padding: 0 16px 12px 16px; }
+  .chat-chip { background: #eef2ff; color: #4338ca; border: 1px solid #c7d2fe; border-radius: 14px; padding: 5px 12px; font-size: 12px; font-weight: 500; cursor: pointer; }
+  .chat-chip:hover { background: #ddd6fe; }
+  .chat-input-bar { display: flex; gap: 8px; padding: 12px 16px; border-top: 1px solid #e5e7eb; }
+  .chat-input { flex: 1; border: 1px solid #d1d5db; border-radius: 8px; padding: 8px 12px; font-size: 13px; outline: none; }
+  .chat-input:focus { border-color: #4338ca; }
+  .chat-send { background: #4338ca; color: #fff; border: none; border-radius: 8px; padding: 8px 14px; font-size: 13px; font-weight: 600; cursor: pointer; }
+
+  /* Chatbot Character */
+  .char-c { width: 56px; height: 56px; position: relative; cursor: pointer; }
+  .char-c .bubble { width: 56px; height: 48px; background: #4338ca; border-radius: 20px; position: relative; box-shadow: 0 4px 16px rgba(67,56,202,0.4); }
+  .char-c .bubble::after { content: ''; position: absolute; bottom: -8px; right: 12px; width: 0; height: 0; border-left: 10px solid transparent; border-top: 10px solid #4338ca; }
+  .char-c .eyes { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+  .char-c .eye { width: 7px; height: 8px; background: #fff; border-radius: 50%; animation: look-blink-c 5s ease-in-out infinite; position: relative; overflow: hidden; }
+  .char-c .eye::after { content: ''; position: absolute; top: -8px; left: 0; width: 100%; height: 100%; background: #4338ca; animation: lid-c 5s ease-in-out infinite; }
+  .char-c .eye-r, .char-c .eye-r::after { animation-delay: 0.05s; }
+  .char-c .sparkle { position: absolute; top: -4px; right: -2px; font-size: 12px; animation: sparkle-c 2s ease-in-out infinite; }
+  @keyframes look-blink-c { 0%,100%{transform:translateX(0);} 20%{transform:translateX(2px);} 40%{transform:translateX(-2px);} 60%{transform:translateX(0);} }
+  @keyframes lid-c { 0%,72%,80%,100%{top:-8px;} 75%,77%{top:0;} }
+  @keyframes sparkle-c { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.8);} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div style="display:flex;align-items:center;">
+    <h1>R2. 응답 요약</h1>
+    <span class="badge">응답자별 카드 · 동적 필터</span>
+  </div>
+  <div style="display:flex;gap:8px;">
+    <button class="btn">📥 전체다운로드 (.xlsx)</button>
+    <button class="btn">📥 화면다운로드 (.xlsx)</button>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <a class="tab" href="mockup-r1.html">원문 트랜스크립트</a>
+  <a class="tab active" href="mockup-r2.html">응답 요약</a>
+  <a class="tab" href="mockup-r3.html">인사이트 보고서</a>
+</div>
+
+<div class="filter-bar">
+  <span class="filter-label">필터</span>
+  <select class="filter-select"><option>성별</option><option>여성</option><option>남성</option></select>
+  <select class="filter-select"><option>연령대</option><option>20대</option><option>30대</option><option>40대</option></select>
+  <select class="filter-select"><option>거주지역</option><option>서울</option><option>경기</option></select>
+  <div class="filter-tag">성별: 여성 <span class="x">✕</span></div>
+  <div class="filter-tag">연령: 30대 <span class="x">✕</span></div>
+  <div class="filter-tag">연령: 40대 <span class="x">✕</span></div>
+  <span class="filter-count">전체 8명 중 <strong>6명</strong> 표시</span>
+</div>
+
+<div class="layout">
+  <!-- Left: Question Navigation -->
+  <div class="sidebar">
+    <div class="sidebar-title">질문 목록</div>
+    <div class="q-item"><span class="q-num">Q0</span>음료 선택 습관</div>
+    <div class="q-item active"><span class="q-num">Q1</span>음료 구매 빈도</div>
+    <div class="q-item"><span class="q-num">Q2</span>구매 시 고려 요인</div>
+    <div class="q-item"><span class="q-num">Q3</span>컨셉 첫인상</div>
+    <div class="q-item"><span class="q-num">Q4</span>가격 수용도</div>
+    <div class="q-item"><span class="q-num">Q5</span>구매 의향</div>
+    <div class="q-item"><span class="q-num">CL</span>추가 기대사항</div>
+  </div>
+
+  <!-- Right: Response Summary Cards -->
+  <div class="main">
+    <div class="question-banner">
+      <div class="q-label">Q1</div>
+      <div class="q-text">평소 음료를 얼마나 자주 구매하시나요?</div>
+    </div>
+
+    <div class="summary-info">
+      필터 적용: <strong>여성 · 30대, 40대</strong> — 해당 응답자 <strong>4명</strong>의 Q1 응답 요약
+    </div>
+
+    <div class="cards">
+
+      <div class="card">
+        <div class="card-header">
+          <span class="respondent-id">P01</span>
+          <span class="respondent-time">2026.03.15 14:30</span>
+        </div>
+        <div class="demo-tags">
+          <span class="demo-tag gender">여성</span>
+          <span class="demo-tag age">30대</span>
+          <span class="demo-tag region">서울 강남</span>
+          <span class="demo-tag usage">주 3회 이상</span>
+        </div>
+        <div class="card-summary">
+          출근 시 거의 <span class="highlight">매일 편의점에서 음료를 구매</span>하며, 그날 기분에 따라 고르는 것을 즐긴다고 응답. 주로 차 종류(녹차라떼, 콤부차)를 선택하고, <span class="highlight">탄산음료는 건강 우려로 기피</span>한다고 밝힘.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="respondent-id">P03</span>
+          <span class="respondent-time">2026.03.16 10:00</span>
+        </div>
+        <div class="demo-tags">
+          <span class="demo-tag gender">여성</span>
+          <span class="demo-tag age">30대</span>
+          <span class="demo-tag region">서울 마포</span>
+          <span class="demo-tag usage">주 1~2회</span>
+        </div>
+        <div class="card-summary">
+          주 1~2회 편의점에서 구매하며, <span class="highlight">SNS에서 본 신상 음료</span> 위주로 선택. "인스타에서 예뻐 보이는 걸 사본다"고 응답. 구매 빈도는 높지 않지만 <span class="highlight">한 번 살 때 2~3개를 한꺼번에</span> 구매하는 패턴.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="respondent-id">P06</span>
+          <span class="respondent-time">2026.03.17 15:00</span>
+        </div>
+        <div class="demo-tags">
+          <span class="demo-tag gender">여성</span>
+          <span class="demo-tag age">30대</span>
+          <span class="demo-tag region">경기 성남</span>
+          <span class="demo-tag usage">주 3회 이상</span>
+        </div>
+        <div class="card-summary">
+          직장 내 음료 소비가 많으며 <span class="highlight">배달앱을 통한 구매가 주된 경로</span>. "자판기보다 배달앱이 선택지가 많아서" 선호한다고 응답. 주 3회 이상 구매하는 <span class="highlight">헤비 유저</span>로, 동료들과 함께 주문하는 경우도 빈번.
+        </div>
+      </div>
+
+      <div class="card">
+        <div class="card-header">
+          <span class="respondent-id">P07</span>
+          <span class="respondent-time">2026.03.18 11:00</span>
+        </div>
+        <div class="demo-tags">
+          <span class="demo-tag gender">여성</span>
+          <span class="demo-tag age">40대</span>
+          <span class="demo-tag region">서울 송파</span>
+          <span class="demo-tag usage">주 1~2회</span>
+        </div>
+        <div class="card-summary">
+          주로 <span class="highlight">대형마트 장볼 때 묶음으로 구매</span>하는 패턴. "편의점은 비싸서 잘 안 가고, 마트에서 6개입 세트를 사놓는다"고 응답. 가족 구성원의 선호를 반영해 <span class="highlight">탄산수와 주스를 번갈아</span> 구매한다고 밝힘.
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+
+<!-- Chatbot Toggle -->
+<div style="position:fixed;bottom:88px;right:24px;background:#fff;border-radius:12px 12px 4px 12px;padding:10px 16px;font-size:13px;color:#4338ca;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,0.12);z-index:1001;border:1px solid #e0e7ff;white-space:nowrap;cursor:pointer;" onclick="document.querySelector('.chat-panel').classList.toggle('open')">궁금한 내용은 언제든 질문하세요</div>
+<div style="position:fixed;bottom:24px;right:24px;z-index:1000;cursor:pointer;" onclick="document.querySelector('.chat-panel').classList.toggle('open')">
+  <div class="char-c">
+    <div class="bubble">
+      <div class="sparkle">✦</div>
+      <div class="eyes">
+        <div class="eye eye-l"></div>
+        <div class="eye eye-r"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Chatbot Panel -->
+<div class="chat-panel">
+  <div class="chat-header">
+    <span class="chat-header-title">분석 어시스턴트</span>
+    <button class="chat-close" onclick="document.querySelector('.chat-panel').classList.remove('open')">✕</button>
+  </div>
+  <div class="chat-messages">
+    <div class="chat-msg bot">
+      <div class="bubble">안녕하세요! 분석 어시스턴트입니다. 인터뷰 결과에 대해 궁금한 점을 물어보세요.</div>
+    </div>
+  </div>
+  <div class="chat-chips">
+    <span class="chat-chip">경쟁사 비교 분석</span>
+    <span class="chat-chip">세그먼트별 차이 분석</span>
+    <span class="chat-chip">특정 질문 심층분석</span>
+    <span class="chat-chip">구매 의향 드라이버 분석</span>
+    <span class="chat-chip">핵심 VOC 요약</span>
+  </div>
+  <div class="chat-input-bar">
+    <input class="chat-input" type="text" placeholder="질문을 입력하세요...">
+    <button class="chat-send">전송</button>
+  </div>
+</div>
+
+</body>
+</html>

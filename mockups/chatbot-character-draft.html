@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>챗봇 캐릭터 초안 비교</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, sans-serif; background: #f5f6f8; color: #1a1a1a; padding: 40px; }
+  h1 { font-size: 20px; margin-bottom: 32px; }
+  .options { display: flex; gap: 48px; flex-wrap: wrap; }
+  .option { text-align: center; }
+  .option h3 { font-size: 14px; color: #6b7280; margin-bottom: 16px; }
+  .option p { font-size: 12px; color: #9ca3af; margin-top: 12px; max-width: 200px; }
+
+  .preview { background: #fff; border-radius: 16px; border: 1px solid #e5e7eb; padding: 40px 60px; position: relative; min-height: 200px; display: flex; align-items: flex-end; justify-content: flex-end; }
+
+  /* 공통 말풍선 */
+  .nudge { background: #fff; border-radius: 12px 12px 4px 12px; padding: 10px 16px; font-size: 13px; color: #4338ca; font-weight: 500; box-shadow: 0 4px 16px rgba(0,0,0,0.1); border: 1px solid #e0e7ff; white-space: nowrap; position: absolute; bottom: 100px; right: 20px; }
+
+  /* ─── A. 미니멀 로봇 ─── */
+  .char-a { width: 56px; height: 56px; position: relative; cursor: pointer; }
+  .char-a .head { width: 56px; height: 56px; background: #4338ca; border-radius: 16px; position: relative; box-shadow: 0 4px 16px rgba(67,56,202,0.4); }
+  .char-a .eyes { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 10px; }
+  .char-a .eye { width: 8px; height: 10px; background: #fff; border-radius: 4px; animation: blink-a 3s infinite; }
+  .char-a .mouth { position: absolute; bottom: 13px; left: 50%; transform: translateX(-50%); width: 14px; height: 3px; background: rgba(255,255,255,0.6); border-radius: 2px; }
+  .char-a .antenna { position: absolute; top: -8px; left: 50%; transform: translateX(-50%); width: 4px; height: 10px; background: #4338ca; border-radius: 2px; }
+  .char-a .antenna::after { content: ''; position: absolute; top: -5px; left: -3px; width: 10px; height: 10px; background: #818cf8; border-radius: 50%; }
+  @keyframes blink-a { 0%,92%,100%{height:10px;} 95%{height:2px;} }
+
+  /* ─── B. 둥근 얼굴 어시스턴트 (헤드셋) ─── */
+  .char-b { width: 60px; height: 60px; position: relative; cursor: pointer; }
+  .char-b .face { width: 52px; height: 52px; background: linear-gradient(135deg, #6366f1, #4338ca); border-radius: 50%; position: absolute; bottom: 0; left: 4px; box-shadow: 0 4px 16px rgba(67,56,202,0.4); }
+  .char-b .eyes { position: absolute; top: 18px; left: 50%; transform: translateX(-50%); display: flex; gap: 12px; }
+  .char-b .eye { width: 6px; height: 6px; background: #fff; border-radius: 50%; }
+  .char-b .eye::after { content: ''; position: absolute; width: 2px; height: 2px; background: #c7d2fe; border-radius: 50%; top: 1px; right: 1px; }
+  .char-b .smile { position: absolute; bottom: 14px; left: 50%; transform: translateX(-50%); width: 12px; height: 6px; border: 2px solid rgba(255,255,255,0.7); border-top: none; border-radius: 0 0 8px 8px; }
+  .char-b .headset-l, .char-b .headset-r { position: absolute; width: 10px; height: 14px; background: #312e81; border-radius: 4px; top: 16px; }
+  .char-b .headset-l { left: -1px; }
+  .char-b .headset-r { right: -1px; }
+  .char-b .headset-band { position: absolute; top: 4px; left: 4px; width: 52px; height: 20px; border: 3px solid #312e81; border-bottom: none; border-radius: 30px 30px 0 0; }
+  .char-b .face { animation: float-b 2.5s ease-in-out infinite; }
+  @keyframes float-b { 0%,100%{transform:translateY(0);} 50%{transform:translateY(-3px);} }
+
+  /* ─── C. 말풍선 캐릭터 ─── */
+  .char-c { width: 56px; height: 56px; position: relative; cursor: pointer; }
+  .char-c .bubble { width: 56px; height: 48px; background: #4338ca; border-radius: 20px; position: relative; box-shadow: 0 4px 16px rgba(67,56,202,0.4); }
+  .char-c .bubble::after { content: ''; position: absolute; bottom: -8px; right: 12px; width: 0; height: 0; border-left: 10px solid transparent; border-top: 10px solid #4338ca; }
+  .char-c .eyes { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+  .char-c .eye { width: 7px; height: 8px; background: #fff; border-radius: 50%; animation: look-blink-c 5s ease-in-out infinite; position: relative; overflow: hidden; }
+  .char-c .eye::after { content: ''; position: absolute; top: -8px; left: 0; width: 100%; height: 100%; background: #4338ca; animation: lid-c 5s ease-in-out infinite; }
+  .char-c .eye-r, .char-c .eye-r::after { animation-delay: 0.05s; }
+  .char-c .sparkle { position: absolute; top: -4px; right: -2px; font-size: 12px; animation: sparkle-c 2s ease-in-out infinite; }
+  @keyframes look-blink-c {
+    0%,100% { transform: translateX(0); }
+    20%     { transform: translateX(2px); }
+    40%     { transform: translateX(-2px); }
+    60%     { transform: translateX(0); }
+  }
+  @keyframes lid-c {
+    0%,72%,80%,100% { top: -8px; }
+    75%,77%         { top: 0; }
+  }
+  @keyframes sparkle-c { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.8);} }
+</style>
+</head>
+<body>
+
+<h1>챗봇 캐릭터 초안 — 3가지 스타일</h1>
+
+<div class="options">
+
+  <!-- A -->
+  <div class="option">
+    <h3>A. 미니멀 로봇</h3>
+    <div class="preview">
+      <div class="nudge">궁금한 내용은 언제든 질문하세요</div>
+      <div class="char-a">
+        <div class="head">
+          <div class="antenna"></div>
+          <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+          <div class="mouth"></div>
+        </div>
+      </div>
+    </div>
+    <p>네모 둥근 로봇. 안테나로 AI 인식. 눈 깜빡임 애니메이션.</p>
+  </div>
+
+  <!-- B -->
+  <div class="option">
+    <h3>B. 헤드셋 어시스턴트</h3>
+    <div class="preview">
+      <div class="nudge">궁금한 내용은 언제든 질문하세요</div>
+      <div class="char-b">
+        <div class="headset-band"></div>
+        <div class="face">
+          <div class="eyes">
+            <div class="eye"></div>
+            <div class="eye"></div>
+          </div>
+          <div class="smile"></div>
+        </div>
+        <div class="headset-l"></div>
+        <div class="headset-r"></div>
+      </div>
+    </div>
+    <p>헤드셋 쓴 둥근 얼굴. 리서치 모더레이터 느낌. 미세한 부유 모션.</p>
+  </div>
+
+  <!-- C -->
+  <div class="option">
+    <h3>C. 말풍선 캐릭터</h3>
+    <div class="preview">
+      <div class="nudge">궁금한 내용은 언제든 질문하세요</div>
+      <div class="char-c">
+        <div class="bubble">
+          <div class="sparkle">✦</div>
+          <div class="eyes">
+            <div class="eye eye-l"></div>
+            <div class="eye eye-r"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <p>말풍선 자체가 캐릭터. 대화/채팅 직관적 연상. 눈동자 움직임.</p>
+  </div>
+
+</div>
+
+</body>
+</html>

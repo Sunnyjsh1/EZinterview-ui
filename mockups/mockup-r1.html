@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>R1. 원문 트랜스크립트 — EasyInterview Result</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, 'Segoe UI', sans-serif; background: #f5f6f8; color: #1a1a1a; }
+
+  .header { background: #fff; border-bottom: 1px solid #e5e7eb; padding: 20px 32px; display: flex; align-items: center; justify-content: space-between; }
+  .header h1 { font-size: 20px; font-weight: 700; }
+  .header .badge { background: #e0e7ff; color: #4338ca; font-size: 12px; font-weight: 600; padding: 4px 10px; border-radius: 12px; margin-left: 12px; }
+
+  .tab-bar { display: flex; gap: 0; border-bottom: 2px solid #e5e7eb; background: #fff; padding: 0 32px; }
+  .tab { padding: 12px 20px; font-size: 14px; font-weight: 500; color: #6b7280; cursor: pointer; border-bottom: 2px solid transparent; margin-bottom: -2px; text-decoration: none; }
+  .tab:hover { color: #4338ca; }
+  .tab.active { color: #4338ca; border-bottom-color: #4338ca; }
+
+  .btn { padding: 8px 16px; border-radius: 8px; border: 1px solid #d1d5db; background: #fff; font-size: 13px; cursor: pointer; font-weight: 500; }
+
+  .filter-bar { background: #fff; padding: 12px 32px; border-bottom: 1px solid #e5e7eb; display: flex; gap: 12px; align-items: center; }
+  .filter-label { font-size: 13px; color: #6b7280; font-weight: 500; }
+  .filter-select { padding: 6px 12px; border: 1px solid #d1d5db; border-radius: 6px; font-size: 13px; background: #fff; }
+  .filter-tag { background: #dbeafe; color: #1d4ed8; padding: 4px 10px; border-radius: 12px; font-size: 12px; font-weight: 500; display: flex; align-items: center; gap: 4px; }
+  .filter-tag .x { cursor: pointer; font-weight: 700; }
+  .filter-count { font-size: 12px; color: #9ca3af; margin-left: auto; }
+
+  .layout { display: flex; height: calc(100vh - 160px); }
+
+  .sidebar { width: 220px; background: #fff; border-right: 1px solid #e5e7eb; padding: 16px 0; overflow-y: auto; flex-shrink: 0; }
+  .sidebar-title { padding: 8px 20px; font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; }
+  .p-item { padding: 10px 20px; font-size: 13px; cursor: pointer; color: #6b7280; border-left: 3px solid transparent; display: flex; justify-content: space-between; align-items: center; }
+  .p-item:hover { background: #f9fafb; }
+  .p-item.active { background: #eef2ff; color: #4338ca; font-weight: 600; border-left-color: #4338ca; }
+  .p-item .p-name { font-weight: 600; }
+  .p-item .p-meta { font-size: 11px; color: #9ca3af; }
+  .p-item-all { padding: 10px 20px; font-size: 13px; cursor: pointer; color: #4338ca; font-weight: 600; border-left: 3px solid #4338ca; background: #eef2ff; margin-bottom: 4px; }
+
+  .main { flex: 1; padding: 28px 36px; overflow-y: auto; }
+
+  .transcript-header { display: flex; justify-content: space-between; align-items: center; margin-bottom: 20px; }
+  .transcript-title { font-size: 16px; font-weight: 700; }
+
+  .audio-player { background: #fff; border-radius: 12px; border: 1px solid #e5e7eb; padding: 16px 20px; margin-bottom: 20px; display: flex; align-items: center; gap: 16px; }
+  .play-btn { width: 40px; height: 40px; border-radius: 50%; background: #4338ca; color: #fff; border: none; cursor: pointer; font-size: 16px; display: flex; align-items: center; justify-content: center; }
+  .progress-bar { flex: 1; height: 6px; background: #e5e7eb; border-radius: 3px; position: relative; }
+  .progress-fill { width: 35%; height: 100%; background: #4338ca; border-radius: 3px; }
+  .time-label { font-size: 12px; color: #6b7280; white-space: nowrap; }
+
+  .transcript-block { margin-bottom: 24px; }
+  .q-marker { background: #eef2ff; border-radius: 8px; padding: 8px 14px; margin-bottom: 12px; display: flex; align-items: center; gap: 8px; }
+  .q-marker .q-num { background: #4338ca; color: #fff; font-size: 11px; font-weight: 700; padding: 2px 8px; border-radius: 4px; }
+  .q-marker .q-text { font-size: 13px; font-weight: 600; color: #4338ca; }
+  .q-marker .q-time { font-size: 11px; color: #9ca3af; margin-left: auto; }
+
+  .utterance { display: flex; gap: 12px; padding: 8px 0; }
+  .utterance .speaker { width: 80px; font-size: 12px; font-weight: 600; flex-shrink: 0; padding-top: 2px; }
+  .utterance .speaker.moderator { color: #4338ca; }
+  .utterance .speaker.respondent { color: #059669; }
+  .utterance .text { font-size: 14px; line-height: 1.8; color: #374151; }
+  .utterance .timestamp { font-size: 11px; color: #d1d5db; flex-shrink: 0; padding-top: 3px; width: 50px; text-align: right; }
+
+  .probing-tag { display: inline-block; background: #fef3c7; color: #92400e; font-size: 10px; font-weight: 600; padding: 1px 6px; border-radius: 3px; margin-left: 4px; vertical-align: middle; }
+
+  /* Chatbot Character */
+  .char-c { width: 56px; height: 56px; position: relative; cursor: pointer; }
+  .char-c .bubble { width: 56px; height: 48px; background: #4338ca; border-radius: 20px; position: relative; box-shadow: 0 4px 16px rgba(67,56,202,0.4); }
+  .char-c .bubble::after { content: ''; position: absolute; bottom: -8px; right: 12px; width: 0; height: 0; border-left: 10px solid transparent; border-top: 10px solid #4338ca; }
+  .char-c .eyes { position: absolute; top: 16px; left: 50%; transform: translateX(-50%); display: flex; gap: 8px; }
+  .char-c .eye { width: 7px; height: 8px; background: #fff; border-radius: 50%; animation: look-blink-c 5s ease-in-out infinite; position: relative; overflow: hidden; }
+  .char-c .eye::after { content: ''; position: absolute; top: -8px; left: 0; width: 100%; height: 100%; background: #4338ca; animation: lid-c 5s ease-in-out infinite; }
+  .char-c .eye-r, .char-c .eye-r::after { animation-delay: 0.05s; }
+  .char-c .sparkle { position: absolute; top: -4px; right: -2px; font-size: 12px; animation: sparkle-c 2s ease-in-out infinite; }
+  @keyframes look-blink-c { 0%,100%{transform:translateX(0);} 20%{transform:translateX(2px);} 40%{transform:translateX(-2px);} 60%{transform:translateX(0);} }
+  @keyframes lid-c { 0%,72%,80%,100%{top:-8px;} 75%,77%{top:0;} }
+  @keyframes sparkle-c { 0%,100%{opacity:1;transform:scale(1);} 50%{opacity:0.4;transform:scale(0.8);} }
+</style>
+</head>
+<body>
+
+<div class="header">
+  <div style="display:flex;align-items:center;">
+    <h1>R1. 원문 트랜스크립트</h1>
+    <span class="badge">Soniox STT 기반</span>
+  </div>
+  <div style="display:flex;gap:8px;">
+    <button class="btn">전체다운로드 (.docx)</button>
+    <button class="btn">화면다운로드 (.docx)</button>
+  </div>
+</div>
+
+<div class="tab-bar">
+  <a class="tab active" href="mockup-r1.html">원문 트랜스크립트</a>
+  <a class="tab" href="mockup-r2.html">응답 요약</a>
+  <a class="tab" href="mockup-r3.html">인사이트 보고서</a>
+</div>
+
+<div class="filter-bar">
+  <span class="filter-label">필터</span>
+  <select class="filter-select"><option>성별</option><option>여성</option><option>남성</option></select>
+  <select class="filter-select"><option>연령대</option><option>20대</option><option>30대</option><option>40대</option></select>
+  <select class="filter-select"><option>거주지역</option><option>서울</option><option>경기</option></select>
+  <div class="filter-tag">성별: 여성 <span class="x">✕</span></div>
+  <div class="filter-tag">연령: 30대 <span class="x">✕</span></div>
+  <div class="filter-tag">연령: 40대 <span class="x">✕</span></div>
+  <span class="filter-count">전체 8명 중 <strong>6명</strong> 표시</span>
+</div>
+
+<div class="layout">
+  <div class="sidebar">
+    <div class="sidebar-title">응답자 목록 (필터 적용)</div>
+    <div class="p-item-all">📋 전체 통합본</div>
+    <div class="p-item active">
+      <div><span class="p-name">P01</span><br><span class="p-meta">여 · 30대 · 서울</span></div>
+    </div>
+    <div class="p-item">
+      <div><span class="p-name">P03</span><br><span class="p-meta">여 · 30대 · 서울</span></div>
+    </div>
+    <div class="p-item">
+      <div><span class="p-name">P04</span><br><span class="p-meta">여 · 20대 · 경기</span></div>
+    </div>
+    <div class="p-item">
+      <div><span class="p-name">P06</span><br><span class="p-meta">여 · 30대 · 경기</span></div>
+    </div>
+    <div class="p-item">
+      <div><span class="p-name">P07</span><br><span class="p-meta">여 · 40대 · 서울</span></div>
+    </div>
+  </div>
+
+  <div class="main">
+    <div class="transcript-header">
+      <div class="transcript-title">P01 — 인터뷰 트랜스크립트</div>
+      <span style="font-size:12px;color:#9ca3af;">2026.03.15 14:30 · 총 18분</span>
+    </div>
+
+    <div class="audio-player">
+      <button class="play-btn">▶</button>
+      <div class="progress-bar"><div class="progress-fill"></div></div>
+      <span class="time-label">06:18 / 18:02</span>
+    </div>
+
+    <!-- ICE BREAK -->
+    <div class="transcript-block">
+      <div class="q-marker">
+        <span class="q-num">Q0</span>
+        <span class="q-text">요즘 편의점이나 마트에서 음료 고르실 때 보통 어떤 걸 집으세요?</span>
+        <span class="q-time">00:00 ~ 01:42</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">안녕하세요. 오늘 인터뷰에 참여해주셔서 감사합니다. 시작하기 전에 가볍게 여쭤볼게요. 요즘 편의점이나 마트 가시면 음료 고를 때 보통 어떤 걸 집으세요?</span>
+        <span class="timestamp">00:00</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker respondent">응답자</span>
+        <span class="text">저는 보통 녹차라떼나 콤부차 같은 차 종류를 많이 골라요. 요즘은 제로 음료도 자주 보이길래 한번씩 사보고요.</span>
+        <span class="timestamp">00:18</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">아, 차 종류를 주로 드시는군요. 그럼 본격적으로 여쭤볼게요.</span>
+        <span class="timestamp">00:35</span>
+      </div>
+    </div>
+
+    <!-- Q1 -->
+    <div class="transcript-block">
+      <div class="q-marker">
+        <span class="q-num">Q1</span>
+        <span class="q-text">평소 음료를 얼마나 자주 구매하시나요?</span>
+        <span class="q-time">01:42 ~ 04:15</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">평소에 음료를 얼마나 자주 구매하시는 편인가요?</span>
+        <span class="timestamp">01:42</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker respondent">응답자</span>
+        <span class="text">저는 출근할 때 거의 매일 편의점 들러서 음료 하나 사는 게 루틴이에요. 그날 기분에 따라 고르는 재미가 있어서.</span>
+        <span class="timestamp">01:50</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">매일 구매하시는군요. 주로 어떤 종류의 음료를 선택하시나요? <span class="probing-tag">프루빙</span></span>
+        <span class="timestamp">02:12</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker respondent">응답자</span>
+        <span class="text">보통은 차 종류요. 녹차라떼나 콤부차 같은 거. 가끔 과일주스도 사고요. 탄산은 잘 안 마셔요.</span>
+        <span class="timestamp">02:20</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">탄산을 잘 안 드시는 특별한 이유가 있으신가요? <span class="probing-tag">프루빙</span></span>
+        <span class="timestamp">02:45</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker respondent">응답자</span>
+        <span class="text">속이 좀 불편해지더라고요. 그리고 당분도 많잖아요. 건강 생각하면 탄산은 좀 꺼려져요.</span>
+        <span class="timestamp">02:52</span>
+      </div>
+    </div>
+
+    <!-- Q2 -->
+    <div class="transcript-block">
+      <div class="q-marker">
+        <span class="q-num">Q2</span>
+        <span class="q-text">음료 구매 시 가장 중요하게 고려하는 요인은?</span>
+        <span class="q-time">04:15 ~ 07:30</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">답변 감사합니다. 그럼 음료를 구매하실 때 가장 중요하게 고려하시는 요인은 뭔가요?</span>
+        <span class="timestamp">04:15</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker respondent">응답자</span>
+        <span class="text">성분표 꼭 확인해요. 당류 낮고 원재료가 깔끔하면 가격이 좀 비싸도 괜찮아요. 요즘은 인공 감미료도 신경 쓰이더라고요.</span>
+        <span class="timestamp">04:28</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">성분을 꼼꼼하게 보시는군요. 그러면 가격보다는 성분이 우선이라고 볼 수 있을까요? <span class="probing-tag">프루빙</span></span>
+        <span class="timestamp">04:55</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker respondent">응답자</span>
+        <span class="text">네, 맞아요. 물론 너무 비싸면 좀 그렇지만, 3천 원 이내라면 성분 좋은 걸로 골라요. 제 건강에 투자한다고 생각하니까요.</span>
+        <span class="timestamp">05:08</span>
+      </div>
+    </div>
+
+    <!-- CLOSING -->
+    <div class="transcript-block">
+      <div class="q-marker">
+        <span class="q-num">CLOSING</span>
+        <span class="q-text">오늘 이야기한 제품에 대해 '이것만은 꼭 반영해줬으면' 하는 점이 있다면요?</span>
+        <span class="q-time">16:30 ~ 18:02</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">마지막으로 하나만 여쭤볼게요. 오늘 이야기한 건강 음료 신제품에 대해 '이것만은 꼭 반영해줬으면' 하는 점이 있으시다면 무엇인가요?</span>
+        <span class="timestamp">16:30</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker respondent">응답자</span>
+        <span class="text">성분이 진짜 깔끔했으면 좋겠어요. 마케팅으로 건강한 척하는 음료가 너무 많잖아요. 성분표에 이상한 거 없이, 원재료가 투명하게 공개되면 그게 제일 신뢰가 가요.</span>
+        <span class="timestamp">16:45</span>
+      </div>
+      <div class="utterance">
+        <span class="speaker moderator">모더레이터</span>
+        <span class="text">성분 투명성이 핵심이시군요. 좋은 의견 감사합니다. 오늘 인터뷰는 여기까지입니다. 참여해 주셔서 정말 감사드립니다.</span>
+        <span class="timestamp">17:28</span>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- Chatbot -->
+<div id="chatbot-nudge" style="position:fixed;bottom:88px;right:24px;background:#fff;border-radius:12px 12px 4px 12px;padding:10px 16px;font-size:13px;color:#4338ca;font-weight:500;box-shadow:0 4px 16px rgba(0,0,0,0.12);z-index:1001;border:1px solid #e0e7ff;white-space:nowrap;cursor:pointer;" onclick="toggleChat();">궁금한 내용은 언제든 질문하세요</div>
+<div style="position:fixed;bottom:24px;right:24px;z-index:1000;" onclick="toggleChat();">
+  <div class="char-c">
+    <div class="bubble">
+      <div class="sparkle">✦</div>
+      <div class="eyes">
+        <div class="eye eye-l"></div>
+        <div class="eye eye-r"></div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div id="chatbot-panel" style="display:none;position:fixed;bottom:90px;right:24px;width:400px;height:520px;background:#fff;border-radius:16px;border:1px solid #e5e7eb;box-shadow:0 8px 32px rgba(0,0,0,0.15);z-index:1000;overflow:hidden;flex-direction:column;">
+  <div style="background:#4338ca;color:#fff;padding:16px 20px;font-size:14px;font-weight:700;display:flex;justify-content:space-between;align-items:center;">
+    AI 분석 어시스턴트
+    <span onclick="toggleChat()" style="cursor:pointer;font-size:18px;">✕</span>
+  </div>
+  <div style="flex:1;overflow-y:auto;padding:16px;">
+    <div style="background:#f3f4f6;border-radius:12px;padding:12px 14px;font-size:13px;color:#374151;line-height:1.6;margin-bottom:12px;">
+      안녕하세요! 인터뷰 데이터 기반으로 추가 분석이 필요하시면 질문해주세요.
+    </div>
+    <div style="display:flex;flex-wrap:wrap;gap:6px;margin-bottom:12px;">
+      <span style="background:#eef2ff;color:#4338ca;padding:4px 12px;border-radius:14px;font-size:12px;cursor:pointer;">경쟁사 비교 분석</span>
+      <span style="background:#eef2ff;color:#4338ca;padding:4px 12px;border-radius:14px;font-size:12px;cursor:pointer;">세그먼트별 차이 분석</span>
+      <span style="background:#eef2ff;color:#4338ca;padding:4px 12px;border-radius:14px;font-size:12px;cursor:pointer;">특정 질문 심층분석</span>
+      <span style="background:#eef2ff;color:#4338ca;padding:4px 12px;border-radius:14px;font-size:12px;cursor:pointer;">구매 의향 드라이버 분석</span>
+      <span style="background:#eef2ff;color:#4338ca;padding:4px 12px;border-radius:14px;font-size:12px;cursor:pointer;">핵심 VOC 요약</span>
+    </div>
+  </div>
+  <div style="border-top:1px solid #e5e7eb;padding:12px;display:flex;gap:8px;">
+    <input type="text" placeholder="분석 요청을 입력하세요..." style="flex:1;border:1px solid #d1d5db;border-radius:8px;padding:8px 12px;font-size:13px;outline:none;">
+    <button style="background:#4338ca;color:#fff;border:none;border-radius:8px;padding:8px 16px;font-size:13px;cursor:pointer;font-weight:600;">전송</button>
+  </div>
+</div>
+
+<script>
+function toggleChat() {
+  const p = document.getElementById('chatbot-panel');
+  const n = document.getElementById('chatbot-nudge');
+  const isOpen = p.style.display === 'flex';
+  p.style.display = isOpen ? 'none' : 'flex';
+  n.style.display = isOpen ? 'block' : 'none';
+}
+</script>
+
+</body>
+</html>
