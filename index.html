@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>EasyInterview — Result Mockups & Specs</title>
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body { font-family: 'Pretendard', -apple-system, 'Segoe UI', sans-serif; background: #f5f6f8; color: #1a1a1a; min-height: 100vh; display: flex; align-items: center; justify-content: center; }
+  .container { max-width: 560px; width: 100%; padding: 48px 32px; }
+  h1 { font-size: 24px; font-weight: 700; margin-bottom: 8px; }
+  .subtitle { font-size: 14px; color: #6b7280; margin-bottom: 36px; }
+  .section-label { font-size: 11px; font-weight: 700; color: #9ca3af; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 12px; margin-top: 28px; }
+  .section-label:first-of-type { margin-top: 0; }
+  .card-list { display: flex; flex-direction: column; gap: 10px; }
+  a.card { display: flex; align-items: center; gap: 14px; background: #fff; border: 1px solid #e5e7eb; border-radius: 12px; padding: 16px 20px; text-decoration: none; color: inherit; transition: border-color 0.15s, box-shadow 0.15s; }
+  a.card:hover { border-color: #4338ca; box-shadow: 0 2px 8px rgba(67,56,202,0.1); }
+  .card-icon { width: 40px; height: 40px; border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 18px; flex-shrink: 0; font-weight: 700; }
+  .card-icon.r1 { background: #eef2ff; color: #4338ca; }
+  .card-icon.r2 { background: #ecfdf5; color: #059669; }
+  .card-icon.r3 { background: #fef3c7; color: #92400e; }
+  .card-icon.cb { background: #f3e8ff; color: #7c3aed; }
+  .card-icon.spec { background: #f0f9ff; color: #0369a1; }
+  .card-body h3 { font-size: 14px; font-weight: 600; margin-bottom: 2px; }
+  .card-body p { font-size: 12px; color: #9ca3af; }
+  .footer { font-size: 11px; color: #d1d5db; text-align: center; margin-top: 48px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <h1>EasyInterview</h1>
+  <div class="subtitle">AI Moderator — Result Mockups & Specs</div>
+
+  <div class="section-label">Result Page Mockups</div>
+  <div class="card-list">
+    <a class="card" href="mockups/mockup-r1.html">
+      <div class="card-icon r1">R1</div>
+      <div class="card-body">
+        <h3>원문 트랜스크립트</h3>
+        <p>Soniox STT 기반 인터뷰 원문 뷰어</p>
+      </div>
+    </a>
+    <a class="card" href="mockups/mockup-r2.html">
+      <div class="card-icon r2">R2</div>
+      <div class="card-body">
+        <h3>응답 요약</h3>
+        <p>질문별 응답 요약 카드</p>
+      </div>
+    </a>
+    <a class="card" href="mockups/mockup-r3.html">
+      <div class="card-icon r3">R3</div>
+      <div class="card-body">
+        <h3>인사이트 보고서</h3>
+        <p>AI 기반 분석 리포트</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-label">Components</div>
+  <div class="card-list">
+    <a class="card" href="mockups/chatbot-character-draft.html">
+      <div class="card-icon cb">CB</div>
+      <div class="card-body">
+        <h3>챗봇 캐릭터 디자인</h3>
+        <p>3가지 캐릭터 옵션 (로봇 / 헤드셋 / 말풍선)</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="section-label">Specs & Documents</div>
+  <div class="card-list">
+    <a class="card" href="specs/EasyInterview_Chatbot_Spec.md">
+      <div class="card-icon spec">S1</div>
+      <div class="card-body">
+        <h3>챗봇 스펙</h3>
+        <p>분석 챗봇 전체 사양서 (테스트 7/7 PASS)</p>
+      </div>
+    </a>
+    <a class="card" href="specs/EasyInterview_Prompt_Report.md">
+      <div class="card-icon spec">S2</div>
+      <div class="card-body">
+        <h3>프롬프트 개발 리포트</h3>
+        <p>AI 모더레이터 프롬프트 종합 보고서</p>
+      </div>
+    </a>
+  </div>
+
+  <div class="footer">EasyInterview &copy; 2026</div>
+</div>
+</body>
+</html>
