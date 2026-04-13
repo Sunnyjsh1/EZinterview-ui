@@ -1,0 +1,73 @@
+{
+  "sample1_health_beverage": {
+    "source": "sample1_health_beverage.html",
+    "difficulty": "쉬움 — 정형화된 번호+태그 형식",
+    "meta": {
+      "g_time": 15,
+      "g_purpose": "건강 음료 신제품 컨셉에 대한 소비자 반응 및 선호 기능 파악",
+      "g_target": "건강에 관심 있는 30~40대 직장인 (남녀 혼합)"
+    },
+    "questions": [
+      { "order": 0, "section": "icebreak", "tag": "워밍업", "content": "요즘 편의점이나 마트에서 음료를 고르실 때 주로 어떤 종류를 선택하시나요?" },
+      { "order": 1, "section": "main", "tag": "구매 빈도", "content": "평소 음료를 얼마나 자주 구매하시나요? 주로 어디서 구매하시는지도 알려주세요." },
+      { "order": 2, "section": "main", "tag": "구매 기준", "content": "음료를 구매하실 때 가장 중요하게 보시는 점은 무엇인가요?" },
+      { "order": 3, "section": "main", "tag": "건강 인식", "content": "건강 기능성 음료에 대해 평소 어떻게 생각하시나요? 실제로 드셔본 경험이 있으시다면 어떠셨는지 알려주세요." },
+      { "order": 4, "section": "main", "tag": "컨셉 반응", "content": "만약 제로 칼로리에 식이섬유가 포함된 건강 음료가 나온다면, 첫인상이 어떠실 것 같으세요?" },
+      { "order": 5, "section": "main", "tag": "차별화", "content": "기존에 아시는 건강 음료(비타민워터, 이온음료 등)와 비교했을 때, 이런 제품이 차별화되려면 어떤 점이 가장 중요할까요?" },
+      { "order": 6, "section": "main", "tag": "가격 수용도", "content": "이런 건강 음료 1병(250ml)에 대해 얼마 정도까지 지불하실 의향이 있으신가요?" },
+      { "order": 7, "section": "main", "tag": "구매 의향", "content": "이 제품이 실제로 출시된다면 구매해보실 의향이 있으신가요? 그 이유도 알려주세요." },
+      { "order": 8, "section": "closing", "tag": "마무리", "content": "오늘 이야기한 건강 음료 신제품에 대해 '이것만은 꼭 반영해줬으면' 하는 점이 있다면 무엇인가요?" }
+    ],
+    "total_questions": 9,
+    "main_count": 7
+  },
+
+  "sample2_ott_service": {
+    "source": "sample2_ott_service.html",
+    "difficulty": "중간 — 표(Table) 형식, ICE BREAK/CLOSING 미표기",
+    "meta": {
+      "g_time": 20,
+      "g_purpose": "OTT 서비스 이용 패턴 변화 및 이탈 요인 탐색",
+      "g_target": "OTT 서비스를 2개 이상 구독 중인 20~40대 남녀"
+    },
+    "questions": [
+      { "order": 0, "section": "icebreak", "tag": "워밍업", "content": "요즘 퇴근 후나 주말에 주로 어떤 콘텐츠를 즐기시나요?", "parse_note": "No.1 '도입' 영역 → ICE BREAK으로 분류" },
+      { "order": 1, "section": "main", "tag": "이용 현황", "content": "현재 구독 중인 OTT 서비스는 어떤 것들이 있고, 각각 얼마나 자주 이용하시나요?" },
+      { "order": 2, "section": "main", "tag": "이용 현황", "content": "여러 OTT 서비스 중에서 가장 자주 이용하시는 건 어떤 건가요? 그 이유도 알려주세요." },
+      { "order": 3, "section": "main", "tag": "콘텐츠 선호", "content": "OTT 서비스를 선택할 때 가장 중요하게 생각하시는 기준은 무엇인가요?" },
+      { "order": 4, "section": "main", "tag": "콘텐츠 선호", "content": "최근 6개월 내 가장 인상 깊게 본 콘텐츠가 있다면, 어떤 점이 좋았는지 알려주세요." },
+      { "order": 5, "section": "main", "tag": "불만/이탈", "content": "OTT 서비스를 이용하면서 불편하거나 아쉬웠던 경험이 있으신가요?" },
+      { "order": 6, "section": "main", "tag": "불만/이탈", "content": "과거에 구독을 해지한 OTT 서비스가 있다면, 해지하게 된 결정적 이유는 무엇이었나요?" },
+      { "order": 7, "section": "main", "tag": "불만/이탈", "content": "현재 구독 중인 서비스 중에서 해지를 고민하고 계신 게 있으신가요? 있다면 어떤 이유에서인가요?" },
+      { "order": 8, "section": "main", "tag": "가격 인식", "content": "현재 OTT 구독에 매달 지출하는 총 금액에 대해 어떻게 느끼시나요? 적절한 수준인가요?" },
+      { "order": 9, "section": "main", "tag": "미래 의향", "content": "앞으로 OTT 서비스 이용 패턴이 바뀔 것 같으신가요? 바뀐다면 어떤 방향으로 바뀔 것 같으세요?" },
+      { "order": 10, "section": "closing", "tag": "마무리", "content": "OTT 서비스가 한 가지만 개선된다면 어떤 점이 바뀌었으면 좋겠으세요?", "parse_note": "No.11 '종합' 영역, 마지막 질문 → CLOSING으로 분류" }
+    ],
+    "total_questions": 11,
+    "main_count": 9
+  },
+
+  "sample3_car_brand": {
+    "source": "sample3_car_brand.html",
+    "difficulty": "어려움 — 자유 텍스트 문단형, 질문이 본문에 섞여있음",
+    "meta": {
+      "g_time": 20,
+      "g_purpose": "국산 자동차 브랜드 이미지와 전기차 전환에 대한 소비자 인식 탐색",
+      "g_target": "자동차 구매 경험이 있는 30~50대 남녀"
+    },
+    "questions": [
+      { "order": 0, "section": "icebreak", "tag": "워밍업", "content": "평소 자동차를 이용하면서 가장 만족하는 순간이 언제인지", "parse_note": "'도입' 섹션 하이라이트 텍스트에서 추출" },
+      { "order": 1, "section": "main", "tag": "구매 경험", "content": "현재 보유하고 있는 차량의 브랜드와 선택 이유" },
+      { "order": 2, "section": "main", "tag": "브랜드 이미지", "content": "국산 자동차 브랜드 하면 떠오르는 이미지나 느낌" },
+      { "order": 3, "section": "main", "tag": "이미지 변화", "content": "5년 전과 비교했을 때 국산 자동차 브랜드 이미지가 어떻게 변했다고 느끼는지" },
+      { "order": 4, "section": "main", "tag": "전기차 인식", "content": "국산 전기차에 대해 어떤 인상을 갖고 있는지" },
+      { "order": 5, "section": "main", "tag": "전기차 구매 의향", "content": "다음 차량을 구매할 때 전기차를 고려할 의향이 있는지, 있다면 어떤 조건이 충족되어야 하는지" },
+      { "order": 6, "section": "main", "tag": "광고 인식", "content": "국산 자동차 광고 중 기억에 남는 것이 있는지, 그 광고가 브랜드 이미지에 어떤 영향을 주었는지" },
+      { "order": 7, "section": "main", "tag": "수입차 비교", "content": "수입 자동차 브랜드와 비교했을 때 국산 브랜드가 부족하다고 느끼는 점이 있는지" },
+      { "order": 8, "section": "main", "tag": "자동차 의미", "content": "자동차를 단순한 이동수단으로 보시는지, 아니면 다른 의미가 있는지" },
+      { "order": 9, "section": "closing", "tag": "마무리", "content": "국산 자동차 브랜드가 소비자에게 더 매력적으로 다가가려면 가장 먼저 바꿔야 할 한 가지가 무엇인지", "parse_note": "'마무리' 섹션 하이라이트 텍스트에서 추출" }
+    ],
+    "total_questions": 10,
+    "main_count": 8
+  }
+}
